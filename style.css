@@ -231,6 +231,51 @@ body, p, a, li {
   }
 }
 
+.custom-file-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #2c3e50; /* dark secondary bg */
+  border-radius: 12px;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+
+.custom-file-input {
+  flex: 1;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file-input-wrapper i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  pointer-events: none;
+  position: relative;
+}
+
+#fileName {
+  flex: none;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover effect */
+.custom-file-input-wrapper:hover {
+  background-color: #34495e;
+  cursor: pointer;
+}
+
+
 /* Core Values */
 .values .card {
   border: 2px solid #0d47a1;
