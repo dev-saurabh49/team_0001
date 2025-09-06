@@ -1,63 +1,7 @@
 // Login form validation
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
 
-  let isValid = true;
 
-  // Team ID validation
-  const username = document.getElementById("username").value.trim();
-  const usernameError = document.getElementById("usernameError");
-  if (username === "") {
-    usernameError.classList.remove("d-none");
-    isValid = false;
-  } else {
-    usernameError.classList.add("d-none");
-  }
 
-  // Password validation
-  const password = document.getElementById("password").value.trim();
-  const passwordError = document.getElementById("passwordError");
-  if (password.length < 6) {
-    passwordError.classList.remove("d-none");
-    isValid = false;
-  } else {
-    passwordError.classList.add("d-none");
-  }
-
-  // Checkbox validation
-  const remember = document.getElementById("remember");
-  const checkboxError = document.getElementById("checkboxError");
-  if (!remember.checked) {
-    checkboxError.classList.remove("d-none");
-    isValid = false;
-  } else {
-    checkboxError.classList.add("d-none");
-  }
-
-  // Final check
-  if (isValid) {
-    alert("✅ Login Successful (Demo)");
-
-    // Reset form and errors
-    this.reset();
-    usernameError.classList.add("d-none");
-    passwordError.classList.add("d-none");
-    checkboxError.classList.add("d-none");
-
-    // Close modal
-    const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
-    if (loginModal) loginModal.hide();
-  }
-});
-
-// Gallery modal listener (outside login form)
-var galleryModal = document.getElementById("galleryModal");
-galleryModal.addEventListener("show.bs.modal", function (event) {
-  var button = event.relatedTarget;
-  var imageSrc = button.getAttribute("data-bs-image");
-  var modalImage = galleryModal.querySelector("#modalImage");
-  modalImage.src = imageSrc;
-});
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
 
