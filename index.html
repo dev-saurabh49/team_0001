@@ -300,7 +300,7 @@
                 <i class="fas fa-user-plus me-2"></i>
                 Register
               </button>
-
+              <!-- register modal -->
               <div
                 class="modal fade"
                 id="registerModal"
@@ -325,10 +325,11 @@
                       ></button>
                     </div>
                     <div class="modal-body">
-                      <form id="registerForm">
+                      <form id="registerForm" action="./code/register_code.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                           <label class="form-label text-light">Full Name</label>
                           <input
+                            name="name"
                             type="text"
                             class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                             placeholder="Your Name"
@@ -338,6 +339,7 @@
                         <div class="mb-3">
                           <label class="form-label text-light">Email</label>
                           <input
+                            name="email"
                             type="email"
                             class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                             placeholder="Your Email"
@@ -347,6 +349,7 @@
                         <div class="mb-3">
                           <label class="form-label text-light">Phone</label>
                           <input
+                            name="phone"
                             type="text"
                             class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                             placeholder="Phone Number"
@@ -356,6 +359,7 @@
                         <div class="mb-3">
                           <label class="form-label text-light">Password</label>
                           <input
+                            name="password"
                             type="password"
                             class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                             placeholder="Password"
@@ -370,6 +374,7 @@
                             class="custom-file-input-wrapper position-relative"
                           >
                             <input
+                              name="profile"
                               type="file"
                               class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 custom-file-input"
                               accept="image/*"
@@ -391,11 +396,14 @@
                         </div>
                         <div class="d-grid">
                           <button
+                            name="register_btn"
                             type="submit"
                             class="btn btn-warning fw-bold rounded-pill py-2"
                           >
                             Submit
                           </button>
+                          <div id="alertContainer"></div>
+
                         </div>
                       </form>
                     </div>
