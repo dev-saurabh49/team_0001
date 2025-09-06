@@ -254,7 +254,7 @@ body, p, a, li {
 }
 
 .custom-file-input-wrapper i {
-  margin-left: 10px;
+  margin-right: 10px;
   font-size: 1.2rem;
   pointer-events: none;
   position: relative;
