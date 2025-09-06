@@ -181,60 +181,105 @@
     <!-- end modal -->
 
     <!-- Hero Section -->
-<section
-  id="hero"
-  class="d-flex align-items-center text-light"
-  style="
-    margin-top: 16px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
-  "
->
-  <div class="container">
-    <div class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
-      <div class="col-lg-7 mb-4 mb-lg-0 mt-4 mt-lg-5">
-        <h1 class="display-5 fw-bold text-warning mb-3">
-          Welcome to <span class="text-light">Team 0001</span>
-        </h1>
-        <p class="lead mb-4 px-2 px-lg-0 mt-3">
-          <span class="fw-bold text-warning">
-            Strength >> Unity >> Brotherhood
-          </span>
-          <br />
-          <span>
-            Team 0001 is not just a group of friends—it’s a family bound by trust, discipline, and unity. Every member stands together, supporting each other through every challenge.
-          </span>
-        </p>
-        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
-          <button
-            type="button"
-            class="btn btn-warning fw-bold rounded-pill px-4 py-2"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-          >
-            <i class="fas fa-user-lock"></i> Login
-          </button>
-          <a
-            href="#founders"
-            class="btn btn-outline-warning fw-bold px-4 py-2 rounded-pill"
-          >
-            👑 Know Our Founders
-          </a>
-        </div>
-      </div>
+    <section
+      id="hero"
+      class="d-flex align-items-center text-light"
+      style="
+        margin-top: 16px;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+      "
+    >
+      <div class="container">
+        <div
+          class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start"
+        >
+          <div class="col-lg-7 mb-4 mb-lg-0 mt-4 mt-lg-5">
+            <h1 class="display-5 fw-bold text-warning mb-3">
+              Welcome to <span class="text-light">Team 0001</span>
+            </h1>
+            <p class="lead mb-4 px-2 px-lg-0 mt-3">
+              <span class="fw-bold text-warning">
+                Strength >> Unity >> Brotherhood
+              </span>
+              <br />
+              <span>
+                Team 0001 is not just a group of friends—it’s a family bound by
+                trust, discipline, and unity. Every member stands together,
+                supporting each other through every challenge.
+              </span>
+            </p>
+            <div
+              class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3"
+            >
+              <button
+                type="button"
+                class="btn btn-warning fw-bold rounded-pill px-4 py-2"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <i class="fas fa-user-lock"></i> Login
+              </button>
+              <button type="button" class="btn btn-outline-warning fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
 
-      <div class="col-lg-5 mb-4 mb-lg-0">
-        <img
-          src="images/0001.jpeg"
-          alt="Team Logo"
-          class="img-fluid rounded-circle border border-4 border-warning shadow-lg"
-          style="max-width: 260px; width: 80%"
-        />
+              <div
+  class="modal fade"
+  id="registerModal"
+  tabindex="-1"
+  aria-labelledby="registerModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-warning fw-bold" id="registerModalLabel">Register to Team 0001</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label class="form-label text-light">Full Name</label>
+            <input type="text" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-light">Email</label>
+            <input type="email" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Your Email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-light">Phone</label>
+            <input type="text" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Phone Number" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-light">Password</label>
+            <input type="password" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Password" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-warning fw-bold rounded-pill py-2">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</section>
+</div>
+            </div>
+          </div>
 
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <img
+              src="images/0001.jpeg"
+              alt="Team Logo"
+              class="img-fluid rounded-circle border border-4 border-warning shadow-lg"
+              style="max-width: 260px; width: 80%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- About -->
     <section
@@ -247,7 +292,6 @@
     >
       <div class="container">
         <div class="row align-items-center">
-         
           <div class="col-lg-5 mb-4 mb-lg-0 text-center">
             <img
               src="images/0001.jpeg"
@@ -270,7 +314,6 @@
             stronger with every challenge. Discipline, respect, and unity define
             who we are. More than a team — we are a family. Join us and be part
             of something greater.<br />
-
 
             <div class="row text-center g-4 mt-4">
               <div class="col-12 col-sm-6 col-md-4">
@@ -436,7 +479,13 @@
                 class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
                 style="width: 130px; height: 130px; object-fit: cover"
               />
-              <h5 class="fw-bold text-warning"><a href="https://rishabhshukla9580.netlify.app/" class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla</h5>
+              <h5 class="fw-bold text-warning">
+                <a
+                  href="https://rishabhshukla9580.netlify.app/"
+                  class="text-light gallery_span text-decoration-none"
+                  >Rishabh </a
+                >Shukla
+              </h5>
               <p class="text-light small">Founder & Leader</p>
               <blockquote class="fst-italic text-light small">
                 "Discipline and Unity is our real strength."
@@ -472,7 +521,13 @@
                 class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
                 style="width: 130px; height: 130px; object-fit: cover"
               />
-              <h5 class="fw-bold text-warning"><a href="https://rishabhshukla9580.netlify.app/" class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla</h5>
+              <h5 class="fw-bold text-warning">
+                <a
+                  href="https://rishabhshukla9580.netlify.app/"
+                  class="text-light gallery_span text-decoration-none"
+                  >Rishabh </a
+                >Shukla
+              </h5>
               <p class="text-light small">Founder & Leader</p>
               <blockquote class="fst-italic text-light small">
                 "Discipline and Unity is our real strength."
@@ -499,7 +554,6 @@
           मज़बूत बनाएगा।
         </p>
 
-        
         <div class="row justify-content-center align-items-center g-4">
           <div class="col-12 col-md-5 text-center">
             <div class="p-3 bg-dark rounded shadow-lg d-inline-block">
@@ -535,7 +589,6 @@
       </div>
     </section>
 
-
     <!-- Bootstrap Modal for Lightbox -->
     <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -562,52 +615,65 @@
     </div>
 
     <!-- Our Mission Section -->
-<section
-  id="mission"
-  style="
-    min-height: 70vh;
-    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
-    padding: 80px 0;
-  "
-  class="text-light"
->
-  <div class="container">
-    <div class="row mb-5 text-center">
-      <div class="col">
-        <h2 class="display-5 fw-bold text-warning mb-3">Our <span class="text-light gallery_span">Mission</span></h2>
-        <p class="lead text-light">
-          At Team 0001, our mission goes beyond friendship. We are committed to serving the community, helping those in need, and creating a positive impact wherever we go.
-        </p>
-      </div>
-    </div>
+    <section
+      id="mission"
+      style="
+        min-height: 70vh;
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        padding: 80px 0;
+      "
+      class="text-light"
+    >
+      <div class="container">
+        <div class="row mb-5 text-center">
+          <div class="col">
+            <h2 class="display-5 fw-bold text-warning mb-3">
+              Our <span class="text-light gallery_span">Mission</span>
+            </h2>
+            <p class="lead text-light">
+              At Team 0001, our mission goes beyond friendship. We are committed
+              to serving the community, helping those in need, and creating a
+              positive impact wherever we go.
+            </p>
+          </div>
+        </div>
 
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
-          <i class="fas fa-hands-helping fa-3x text-warning mb-3"></i>
-          <h5 class="fw-bold mb-2">Community Service</h5>
-          <p>We actively participate in initiatives that uplift our community and support local causes.</p>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+              <i class="fas fa-hands-helping fa-3x text-warning mb-3"></i>
+              <h5 class="fw-bold mb-2">Community Service</h5>
+              <p>
+                We actively participate in initiatives that uplift our community
+                and support local causes.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+              <i class="fas fa-heart fa-3x text-warning mb-3"></i>
+              <h5 class="fw-bold mb-2">Helping People</h5>
+              <p>
+                From providing essentials to guiding those in need, we are
+                always ready to lend a helping hand.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+              <i class="fas fa-globe-americas fa-3x text-warning mb-3"></i>
+              <h5 class="fw-bold mb-2">Creating Impact</h5>
+              <p>
+                Our efforts aim to bring meaningful change, inspire others, and
+                build a stronger, united society.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
-          <i class="fas fa-heart fa-3x text-warning mb-3"></i>
-          <h5 class="fw-bold mb-2">Helping People</h5>
-          <p>From providing essentials to guiding those in need, we are always ready to lend a helping hand.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
-          <i class="fas fa-globe-americas fa-3x text-warning mb-3"></i>
-          <h5 class="fw-bold mb-2">Creating Impact</h5>
-          <p>Our efforts aim to bring meaningful change, inspire others, and build a stronger, united society.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> 
+    </section>
 
     <!-- Core Values -->
     <!-- <section class="values py-5 bg-light">
@@ -680,112 +746,138 @@
         </div>
       </div>
     </section> -->
-<section
-  id="contact"
-  style="
-    min-height: 80vh;
-    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
-    padding: 80px 0;
-  "
-  class="text-light"
->
-  <div class="container">
-    <!-- Section Header -->
-    <div class="row mb-5 text-center">
-      <div class="col">
-        <h2 class="display-5 fw-bold text-warning mb-2">
-          Contact <span class="text-light gallery_span">Us</span>
-        </h2>
-        <p class="lead text-light">
-          Have questions or want to connect? Send us a message or reach out
-          via phone, WhatsApp, or social media.
-        </p>
-      </div>
-    </div>
+    <section
+      id="contact"
+      style="
+        min-height: 80vh;
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        padding: 80px 0;
+      "
+      class="text-light"
+    >
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row mb-5 text-center">
+          <div class="col">
+            <h2 class="display-5 fw-bold text-warning mb-2">
+              Contact <span class="text-light gallery_span">Us</span>
+            </h2>
+            <p class="lead text-light">
+              Have questions or want to connect? Send us a message or reach out
+              via phone, WhatsApp, or social media.
+            </p>
+          </div>
+        </div>
 
-    <!-- Contact Form + Info -->
-    <div class="row justify-content-center align-items-start flex-column-reverse flex-lg-row">
-      <!-- Contact Form -->
-      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-        <form id="contactForm" class="p-4 bg-dark rounded-4 shadow-lg">
-          <div class="mb-3">
-            <label class="form-label text-light">Name</label>
-            <input
-              type="text"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
-              placeholder="Your Name"
-              required
-            />
+        <!-- Contact Form + Info -->
+        <div
+          class="row justify-content-center align-items-start flex-column-reverse flex-lg-row"
+        >
+          <!-- Contact Form -->
+          <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+            <form id="contactForm" class="p-4 bg-dark rounded-4 shadow-lg">
+              <div class="mb-3">
+                <label class="form-label text-light">Name</label>
+                <input
+                  type="text"
+                  class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label text-light">Email</label>
+                <input
+                  type="email"
+                  class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label text-light">Message</label>
+                <textarea
+                  class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="d-grid">
+                <button
+                  type="submit"
+                  class="btn btn-warning fw-bold rounded-pill py-2"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label text-light">Email</label>
-            <input
-              type="email"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
-              placeholder="Your Email"
-              required
-            />
-          </div>
+          <!-- Contact Info -->
+          <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+            <div class="get-in-touch p-4 bg-dark rounded-4 shadow-lg h-100">
+              <h5 class="text-warning fw-bold mb-4 text-center text-lg-start">
+                Get in Touch
+              </h5>
+              <p class="mb-3 text-center text-lg-start">
+                <i class="fas fa-phone-alt me-2"></i> +91 9580526988
+              </p>
+              <p class="mb-3 text-center text-lg-start">
+                <i class="fab fa-whatsapp me-2"></i>
+                <a
+                  href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub"
+                  class="text-light text-decoration-none"
+                  >Chat on WhatsApp</a
+                >
+              </p>
+              <p class="mb-3 text-center text-lg-start">
+                <i class="fas fa-envelope me-2"></i>
+                <a
+                  href="mailto:rishabhshukla43558@gmail.com"
+                  class="text-light text-decoration-none"
+                  >rishabhshukla43558@gmail.com</a
+                >
+              </p>
 
-          <div class="mb-3">
-            <label class="form-label text-light">Message</label>
-            <textarea
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
+              <h6
+                class="text-warning fw-bold mt-4 mb-3 text-center text-lg-start"
+              >
+                Follow Us
+              </h6>
+              <div class="text-center text-lg-start">
+                <a href="#" class="text-light fs-5 me-3"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="text-light fs-5 me-3"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="text-light fs-5 me-3"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="text-light fs-5"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
 
-          <div class="d-grid">
-            <button
-              type="submit"
-              class="btn btn-warning fw-bold rounded-pill py-2"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-        <div class="get-in-touch p-4 bg-dark rounded-4 shadow-lg h-100">
-          <h5 class="text-warning fw-bold mb-4 text-center text-lg-start">Get in Touch</h5>
-          <p class="mb-3 text-center text-lg-start"><i class="fas fa-phone-alt me-2"></i> +91 9580526988</p>
-          <p class="mb-3 text-center text-lg-start">
-            <i class="fab fa-whatsapp me-2"></i>
-            <a href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub" class="text-light text-decoration-none">Chat on WhatsApp</a>
-          </p>
-          <p class="mb-3 text-center text-lg-start">
-            <i class="fas fa-envelope me-2"></i>
-            <a href="mailto:rishabhshukla43558@gmail.com" class="text-light text-decoration-none">rishabhshukla43558@gmail.com</a>
-          </p>
-
-          <h6 class="text-warning fw-bold mt-4 mb-3 text-center text-lg-start">Follow Us</h6>
-          <div class="text-center text-lg-start">
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-light fs-5"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-          <div class="text-center mt-4">
-            <button
-              class="btn-callback-floating"
-              data-bs-toggle="modal"
-              data-bs-target="#callbackModal"
-              title="Request Call Back"
-            >
-              <i class="fas fa-phone-alt me-2"></i> Request Call Back
-            </button>
+              <div class="text-center mt-4">
+                <button
+                  class="btn-callback-floating"
+                  data-bs-toggle="modal"
+                  data-bs-target="#callbackModal"
+                  title="Request Call Back"
+                >
+                  <i class="fas fa-phone-alt me-2"></i> Request Call Back
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Floating Request Call Back Button -->
     <!-- <a
@@ -869,9 +961,14 @@
       <i class="fas fa-chevron-up"></i>
     </button>
     <!-- WhatsApp Floating Button -->
-<a href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub" target="_blank" class="btn-whatsapp" title="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+    <a
+      href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub"
+      target="_blank"
+      class="btn-whatsapp"
+      title="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer
       style="
