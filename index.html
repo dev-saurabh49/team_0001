@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TEAM 0001 - Homepage</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm"
+      style="background: #0d1b2a"
+    >
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand d-flex align-items-center fw-bold text-warning"
+          href="#"
+        >
+          <img
+            src="images/0001.jpeg"
+            alt="Team 0001 Logo"
+            class="me-2 rounded-circle"
+            style="height: 35px; width: 35px; object-fit: cover"
+          />
+          ★彡[ⲧē𝕒ɱ_𝟘𝟘𝟘1]彡★
+        </a>
+
+        <!-- Toggler Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link active text-light" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#members">Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#announcements"
+                >Announcements</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./gallery.html">Gallery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- modal login -->
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #fff;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+          "
+        >
+          <!-- Header -->
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-warning" id="loginModalLabel">
+              <i class="fas fa-user-shield"></i> Member Login
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="username" class="form-label fw-bold">Team ID</label>
+                <input
+                  type="text"
+                  class="form-control bg-dark text-white border-warning"
+                  id="username"
+                  placeholder="Enter your Team ID"
+                />
+                <small id="usernameError" class="text-danger d-none"
+                  >⚠️ Team ID required</small
+                >
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label fw-bold"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control bg-dark text-white border-warning"
+                  id="password"
+                  placeholder="Enter your password"
+                />
+                <small id="passwordError" class="text-danger d-none"
+                  >⚠️ Password must be at least 6 characters</small
+                >
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input border-warning"
+                  type="checkbox"
+                  id="remember"
+                />
+                <label class="form-check-label" for="remember"
+                  >Remember me</label
+                >
+                <br />
+                <small id="checkboxError" class="text-danger d-none"
+                  >⚠️ Please check this box</small
+                >
+              </div>
+              <button
+                type="submit"
+                class="btn btn-warning w-100 fw-bold rounded-pill"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer border-0 text-center">
+            <p class="small text-light m-0">
+              Forgot password?
+              <a href="#" class="text-warning fw-bold">Click here</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end modal -->
+
+    <!-- Hero Section -->
+<section
+  id="hero"
+  class="d-flex align-items-center text-light"
+  style="
+    margin-top: 16px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+  "
+>
+  <div class="container">
+    <div class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
+      <div class="col-lg-7 mb-4 mb-lg-0 mt-4 mt-lg-5">
+        <h1 class="display-5 fw-bold text-warning mb-3">
+          Welcome to <span class="text-light">Team 0001</span>
+        </h1>
+        <p class="lead mb-4 px-2 px-lg-0 mt-3">
+          <span class="fw-bold text-warning">
+            Strength >> Unity >> Brotherhood
+          </span>
+          <br />
+          <span>
+            Team 0001 is not just a group of friends—it’s a family bound by trust, discipline, and unity. Every member stands together, supporting each other through every challenge.
+          </span>
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+          <button
+            type="button"
+            class="btn btn-warning fw-bold rounded-pill px-4 py-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            <i class="fas fa-user-lock"></i> Login
+          </button>
+          <a
+            href="#founders"
+            class="btn btn-outline-warning fw-bold px-4 py-2 rounded-pill"
+          >
+            👑 Know Our Founders
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <img
+          src="images/0001.jpeg"
+          alt="Team Logo"
+          class="img-fluid rounded-circle border border-4 border-warning shadow-lg"
+          style="max-width: 260px; width: 80%"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About -->
+    <section
+      id="about"
+      class="py-5"
+      style="
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        color: #fff;
+      "
+    >
+      <div class="container">
+        <div class="row align-items-center">
+         
+          <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+            <img
+              src="images/0001.jpeg"
+              alt="About Team"
+              class="img-fluid rounded-circle border border-4 border-warning shadow-lg mb-3"
+              style="max-width: 260px; width: 80%"
+            />
+          </div>
+
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="fw-bold text-warning mb-3">
+              About <span class="text-light gallery_span">Us</span>
+            </h1>
+            <p class="mb-4 text-light px-2 px-lg-0">
+              <span class="fw-bold text-warning mb-3"
+                >Discipline >> Respect >> Loyalty</span
+              >
+            </p>
+            Where brotherhood meets loyalty and trust. We rise together,
+            stronger with every challenge. Discipline, respect, and unity define
+            who we are. More than a team — we are a family. Join us and be part
+            of something greater.<br />
+
+
+            <div class="row text-center g-4 mt-4">
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-handshake fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Brotherhood</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-heart fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Loyalty</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-hands-praying fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Respect</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-fire fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Discipline</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-dumbbell fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Strength</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="icon-box p-4 rounded shadow-lg h-100">
+                  <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                  <h6 class="fw-bold">Unity</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section
+      id="timeline"
+      class="text-light"
+      style="
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        padding-top: 60px;
+        padding-bottom: 60px;
+      "
+    >
+      <div class="container">
+        <div class="row mb-5 text-center">
+          <div class="col">
+            <h2 class="display-5 fw-bold text-warning mb-3">
+              Our <span class="text-light gallery_span">Journey</span>
+            </h2>
+            <p class="lead text-light px-3 px-lg-0">
+              Milestones that shaped Team 0001, from founding to expansion.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-card right">
+              <div class="card bg-dark text-light shadow-lg border-0 rounded-4">
+                <div class="card-body text-center">
+                  <i class="fas fa-handshake fa-3x text-warning mb-3"></i>
+                  <h5 class="fw-bold text-warning mb-2">JUN 2025</h5>
+                  <p class="mb-0">
+                    First meetups and team gatherings were held, building the
+                    foundation of trust, respect, and loyalty.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-card left">
+              <div class="card bg-dark text-light shadow-lg border-0 rounded-4">
+                <div class="card-body text-center">
+                  <i class="fas fa-users fa-3x text-warning mb-3"></i>
+                  <h5 class="fw-bold text-warning mb-2">JULY 2025</h5>
+                  <p class="mb-0">
+                    Team started small community activities and established core
+                    team values.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-card right">
+              <div class="card bg-dark text-light shadow-lg border-0 rounded-4">
+                <div class="card-body text-center">
+                  <i class="fas fa-lightbulb fa-3x text-warning mb-3"></i>
+                  <h5 class="fw-bold text-warning mb-2">AUG 2025</h5>
+                  <p class="mb-0">
+                    Brainstormed new ideas for team projects and defined goals
+                    for growth and collaboration.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-card left">
+              <div class="card bg-dark text-light shadow-lg border-0 rounded-4">
+                <div class="card-body text-center">
+                  <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                  <h5 class="fw-bold text-warning mb-2">SEPT 2025</h5>
+                  <p class="mb-0">
+                    Successfully completed first team milestone and celebrated
+                    the unity and dedication of all members.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- founders -->
+    <section
+      id="founders"
+      class="py-5"
+      style="
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        color: #fff;
+      "
+    >
+      <div class="container text-center">
+        <h2 class="fw-bold text-warning mb-4">
+          Meet Our <span class="gallery_span text-light">Founders</span>
+        </h2>
+        <p class="mb-5 text-light px-2 px-lg-5">
+          Team 0001 की नींव कुछ खास लोगों ने रखी है। उनका vision, brotherhood और
+          dedication ही आज हमें यहां तक लाया है।
+        </p>
+
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div
+              class="card founder-card h-100 shadow-lg border-0 text-center p-4"
+            >
+              <img
+                src="images/rishabh_1.jpg"
+                alt="Founder 1"
+                class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
+                style="width: 130px; height: 130px; object-fit: cover"
+              />
+              <h5 class="fw-bold text-warning"><a href="https://rishabhshukla9580.netlify.app/" class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla</h5>
+              <p class="text-light small">Founder & Leader</p>
+              <blockquote class="fst-italic text-light small">
+                "Discipline and Unity is our real strength."
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div
+              class="card founder-card h-100 shadow-lg border-0 text-center p-4"
+            >
+              <img
+                src="images/pandey.jpeg"
+                alt="Founder 2"
+                class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
+                style="width: 130px; height: 130px; object-fit: cover"
+              />
+              <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
+              <p class="text-light small">Co-Founder</p>
+              <blockquote class="fst-italic text-light small">
+                "Brotherhood is the foundation of Team 0001."
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div
+              class="card founder-card h-100 shadow-lg border-0 text-center p-4"
+            >
+              <img
+                src="images/rishabh_1.jpg"
+                alt="Founder 1"
+                class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
+                style="width: 130px; height: 130px; object-fit: cover"
+              />
+              <h5 class="fw-bold text-warning"><a href="https://rishabhshukla9580.netlify.app/" class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla</h5>
+              <p class="text-light small">Founder & Leader</p>
+              <blockquote class="fst-italic text-light small">
+                "Discipline and Unity is our real strength."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Be a Part of Our Journey Section -->
+    <section
+      id="donate"
+      class="py-5"
+      style="background: linear-gradient(135deg, #0d1b2a, #1b263b); color: #fff"
+    >
+      <div class="container text-center">
+        <h2 class="fw-bold text-warning mb-4">
+          ✨ Be a Part of Our Journey ✨
+        </h2>
+        <p class="mb-4 text-light lead">
+          Team 0001 सिर्फ भाईचारे और unity की पहचान नहीं है, हम ज़रूरतमंदों की
+          मदद में भी विश्वास रखते हैं। आपका छोटा सा योगदान हमारे मिशन को और
+          मज़बूत बनाएगा।
+        </p>
+
+        
+        <div class="row justify-content-center align-items-center g-4">
+          <div class="col-12 col-md-5 text-center">
+            <div class="p-3 bg-dark rounded shadow-lg d-inline-block">
+              <img
+                src="images/qr_code.jpeg"
+                alt="Donate QR"
+                class="img-fluid rounded"
+                style="max-width: 200px"
+              />
+              <p class="small mt-2 text-warning fw-bold">
+                📲 Scan & Contribute
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5 text-center">
+            <div class="d-grid gap-3">
+              <a
+                href="#"
+                class="btn btn-warning fw-bold rounded-pill py-2 px-4"
+              >
+                <i class="fas fa-hand-holding-heart"></i> Contribute Now
+              </a>
+              <a
+                href="#about"
+                class="btn btn-outline-warning fw-bold rounded-pill py-2 px-4"
+              >
+                <i class="fas fa-info-circle"></i> Know More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Bootstrap Modal for Lightbox -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark border-0">
+          <div class="modal-body p-0">
+            <img
+              src=""
+              id="modalImage"
+              class="img-fluid w-100"
+              alt="Gallery Image"
+            />
+          </div>
+          <div class="modal-footer border-0 justify-content-center">
+            <button
+              type="button"
+              class="btn btn-warning fw-bold rounded-pill"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Mission Section -->
+<section
+  id="mission"
+  style="
+    min-height: 70vh;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    padding: 80px 0;
+  "
+  class="text-light"
+>
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col">
+        <h2 class="display-5 fw-bold text-warning mb-3">Our <span class="text-light gallery_span">Mission</span></h2>
+        <p class="lead text-light">
+          At Team 0001, our mission goes beyond friendship. We are committed to serving the community, helping those in need, and creating a positive impact wherever we go.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+          <i class="fas fa-hands-helping fa-3x text-warning mb-3"></i>
+          <h5 class="fw-bold mb-2">Community Service</h5>
+          <p>We actively participate in initiatives that uplift our community and support local causes.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+          <i class="fas fa-heart fa-3x text-warning mb-3"></i>
+          <h5 class="fw-bold mb-2">Helping People</h5>
+          <p>From providing essentials to guiding those in need, we are always ready to lend a helping hand.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mission-card p-4 rounded-4 shadow-lg text-center h-100">
+          <i class="fas fa-globe-americas fa-3x text-warning mb-3"></i>
+          <h5 class="fw-bold mb-2">Creating Impact</h5>
+          <p>Our efforts aim to bring meaningful change, inspire others, and build a stronger, united society.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+    <!-- Core Values -->
+    <!-- <section class="values py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="text-primary mb-5">हमारे मूल मूल्य</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card p-4">
+              <h3>💪 Strength</h3>
+              <p>हम हर challenge को accept करते हैं।</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4">
+              <h3>🤝 Unity</h3>
+              <p>सब साथ, सब बराबर।</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4">
+              <h3>🎯 Discipline</h3>
+              <p>Rules का पालन और respect हमारी प्राथमिकता है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Announcements -->
+    <!-- <section id="announcements" class="py-5">
+      <div class="container">
+        <h2 class="text-center text-primary mb-4">Latest Announcements</h2>
+        <div class="timeline">
+          <div class="timeline-item">Sunday को Meeting at 7PM</div>
+          <div class="timeline-item">New Task Assigned: Logo Update</div>
+          <div class="timeline-item">Team Outing Coming Soon</div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Members -->
+    <!-- <section id="members" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center text-primary mb-4">हमारे Members</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card member-card text-center p-3">
+              <h4>🐯 Leader</h4>
+              <p>Your Name</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card member-card text-center p-3">
+              <h4>👤 Member 1</h4>
+              <p>Member Name</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card member-card text-center p-3">
+              <h4>👤 Member 2</h4>
+              <p>Member Name</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card member-card text-center p-3">
+              <h4>👤 Member 3</h4>
+              <p>Member Name</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+<section
+  id="contact"
+  style="
+    min-height: 80vh;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    padding: 80px 0;
+  "
+  class="text-light"
+>
+  <div class="container">
+    <!-- Section Header -->
+    <div class="row mb-5 text-center">
+      <div class="col">
+        <h2 class="display-5 fw-bold text-warning mb-2">
+          Contact <span class="text-light gallery_span">Us</span>
+        </h2>
+        <p class="lead text-light">
+          Have questions or want to connect? Send us a message or reach out
+          via phone, WhatsApp, or social media.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Form + Info -->
+    <div class="row justify-content-center align-items-start flex-column-reverse flex-lg-row">
+      <!-- Contact Form -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <form id="contactForm" class="p-4 bg-dark rounded-4 shadow-lg">
+          <div class="mb-3">
+            <label class="form-label text-light">Name</label>
+            <input
+              type="text"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-light">Email</label>
+            <input
+              type="email"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-light">Message</label>
+            <textarea
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-warning fw-bold rounded-pill py-2"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="get-in-touch p-4 bg-dark rounded-4 shadow-lg h-100">
+          <h5 class="text-warning fw-bold mb-4 text-center text-lg-start">Get in Touch</h5>
+          <p class="mb-3 text-center text-lg-start"><i class="fas fa-phone-alt me-2"></i> +91 9580526988</p>
+          <p class="mb-3 text-center text-lg-start">
+            <i class="fab fa-whatsapp me-2"></i>
+            <a href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub" class="text-light text-decoration-none">Chat on WhatsApp</a>
+          </p>
+          <p class="mb-3 text-center text-lg-start">
+            <i class="fas fa-envelope me-2"></i>
+            <a href="mailto:rishabhshukla43558@gmail.com" class="text-light text-decoration-none">rishabhshukla43558@gmail.com</a>
+          </p>
+
+          <h6 class="text-warning fw-bold mt-4 mb-3 text-center text-lg-start">Follow Us</h6>
+          <div class="text-center text-lg-start">
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light fs-5"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+          <div class="text-center mt-4">
+            <button
+              class="btn-callback-floating"
+              data-bs-toggle="modal"
+              data-bs-target="#callbackModal"
+              title="Request Call Back"
+            >
+              <i class="fas fa-phone-alt me-2"></i> Request Call Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Floating Request Call Back Button -->
+    <!-- <a
+      href="#"
+      class="btn-floating"
+      data-bs-toggle="modal"
+      data-bs-target="#callbackModal"
+      title="Request Call Back"
+    >
+      <i class="fas fa-phone-alt"></i>
+    </a> -->
+
+    <!-- Callback Modal -->
+    <div
+      class="modal fade"
+      id="callbackModal"
+      tabindex="-1"
+      aria-labelledby="callbackModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
+          <div class="modal-header border-0">
+            <h5
+              class="modal-title text-warning fw-bold"
+              id="callbackModalLabel"
+            >
+              Request a Call Back
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="callbackForm">
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <button
+                  type="submit"
+                  class="btn btn-warning fw-bold rounded-pill py-2"
+                >
+                  <i class="fas fa-paper-plane me-2"></i> Submit
+                </button>
+              </div>
+            </form>
+            <div
+              id="callbackSuccess"
+              class="alert alert-success mt-3 d-none"
+              role="alert"
+            >
+              ✅ Your request has been submitted!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- Footer Section -->
+
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <!-- WhatsApp Floating Button -->
+<a href="https://chat.whatsapp.com/GJ48c1MP4Zj4MXmHiEWsub" target="_blank" class="btn-whatsapp" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+    <footer
+      style="
+        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        padding: 60px 0;
+        color: #f8f9fa;
+      "
+    >
+      <div class="container">
+        <div class="row align-items-center mb-4">
+          <!-- Logo / Name -->
+          <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <h3 class="fw-bold text-warning">Team 0001</h3>
+            <p class="mb-0 small">Brotherhood • Loyalty • Respect</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <h6 class="text-warning fw-bold mb-2">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#hero" class="text-light text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-light text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#gallery" class="text-light text-decoration-none"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-light text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-4 text-center text-md-end">
+            <h6 class="text-warning fw-bold mb-2">Follow Us</h6>
+            <a href="#" class="text-light fs-5 me-3"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-light fs-5 me-3"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-light fs-5 me-3"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-light fs-5"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr style="border-color: #ffc10733" />
+
+        <!-- Copyright -->
+        <div class="row">
+          <div class="col text-center">
+            <p class="mb-0 small">
+              &copy; <span id="currentYear"></span> Made with 🤍 by
+              <a
+                href="https://www.linkedin.com/in/saurabh-pandey-179695296"
+                class="text-decoration-none text-warning"
+                >Us</a
+              >
+              😎. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>

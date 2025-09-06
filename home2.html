@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TEAM 0001 - Homepage</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .navbar-brand img {
+      height: 35px;
+      width: 35px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .icon-box {
+      background: #1b263b;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .icon-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .founder-card {
+      background: linear-gradient(135deg,#0d1b2a,#1b263b);
+      color: #fff;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+    .founder-card:hover {
+      transform: translateY(-5px);
+    }
+    .footer {
+      background:#0d1b2a;
+      color:#fff;
+      text-align:center;
+      padding:15px 0;
+    }
+    .timeline-item {
+      background: #1b263b;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-left: 4px solid #d4af37;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background:#0d1b2a;">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning d-flex align-items-center" href="#">
+      <img src="images/0001.jpeg" alt="Team Logo" class="me-2"> TEAM 0001
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
+        <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
+        <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+        <li class="nav-item">
+          <a class="btn btn-warning fw-bold rounded-pill px-3 py-1 mt-2 mt-lg-0" 
+             href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="fas fa-user-lock"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="d-flex align-items-center text-light" 
+  style="min-height:100vh;background:linear-gradient(135deg,#0d1b2a 0%,#1b263b 100%);">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold text-warning mb-3">
+          Welcome to <span class="text-light">Team 0001</span>
+        </h1>
+        <p class="lead mb-4">
+          <span class="fw-bold text-warning">Brotherhood • Loyalty • Respect</span><br>
+          A bond stronger than anything.<br>
+          <span class="fw-bold text-warning">Discipline • Strength • Unity</span><br>
+          Together, we are not just a team — we are a family.
+        </p>
+        <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+          <a href="#" class="btn btn-warning fw-bold rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="fas fa-user-lock"></i> Login
+          </a>
+          <a href="#founders" class="btn btn-outline-warning fw-bold px-4 py-2 rounded-pill">
+            👑 Know Our Founders
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center mt-5 mt-lg-0">
+        <img src="images/0001.jpeg" alt="Team Logo"
+          class="img-fluid rounded-circle border border-4 border-warning shadow-lg"
+          style="max-width:280px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5" style="background:linear-gradient(135deg,#0d1b2a 0%,#1b263b 100%);color:#fff;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+        <img src="images/0001.jpeg" alt="About Team" class="img-fluid rounded-circle border border-4 border-warning shadow-lg mb-3"
+          style="max-width:250px;">
+      </div>
+      <div class="col-lg-7">
+        <h2 class="fw-bold text-warning mb-3">About Us</h2>
+        <p class="mb-4">
+          Team 0001 सिर्फ दोस्तों का ग्रुप नहीं है, यह भाईचारे और भरोसे की पहचान है। हम एक-दूसरे की ताकत हैं और हर situation में साथ खड़े रहते हैं। Discipline, Respect और Loyalty ही हमारी टीम की असली पहचान है।
+        </p>
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-handshake fa-2x text-warning mb-2"></i><h6>Brotherhood</h6></div></div>
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-heart fa-2x text-warning mb-2"></i><h6>Loyalty</h6></div></div>
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-hands-praying fa-2x text-warning mb-2"></i><h6>Respect</h6></div></div>
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-fire fa-2x text-warning mb-2"></i><h6>Discipline</h6></div></div>
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-dumbbell fa-2x text-warning mb-2"></i><h6>Strength</h6></div></div>
+          <div class="col-6 col-md-4"><div class="icon-box p-4 rounded shadow-lg h-100"><i class="fas fa-bolt fa-2x text-warning mb-2"></i><h6>Unity</h6></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founders -->
+<section id="founders" class="py-5" style="background:#0d1b2a;color:#fff;">
+  <div class="container text-center">
+    <h2 class="fw-bold text-warning mb-4">✨ Meet Our Founders ✨</h2>
+    <p class="mb-5">Team 0001 की नींव कुछ खास लोगों ने रखी है। उनका vision, brotherhood और dedication ही आज हमें यहां तक लाया है।</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-4"><div class="card founder-card h-100 shadow-lg border-0 p-3"><img src="images/rishabh_1.jpg" class="rounded-circle mx-auto mb-3" style="width:110px;height:110px;object-fit:cover;"><h5 class="fw-bold text-warning">Rishabh Shukla</h5><p class="small">Founder & Leader</p><blockquote class="fst-italic small">"Discipline and Unity is our real strength."</blockquote></div></div>
+      <div class="col-12 col-md-4"><div class="card founder-card h-100 shadow-lg border-0 p-3"><img src="images/pandey.jpeg" class="rounded-circle mx-auto mb-3" style="width:110px;height:110px;object-fit:cover;"><h5 class="fw-bold text-warning">Amit Kumar</h5><p class="small">Co-Founder</p><blockquote class="fst-italic small">"Brotherhood is the foundation of Team 0001."</blockquote></div></div>
+      <div class="col-12 col-md-4"><div class="card founder-card h-100 shadow-lg border-0 p-3"><img src="images/rishabh_1.jpg" class="rounded-circle mx-auto mb-3" style="width:110px;height:110px;object-fit:cover;"><h5 class="fw-bold text-warning">Rahul Verma</h5><p class="small">Core Member</p><blockquote class="fst-italic small">"Respect and Loyalty keep our team alive."</blockquote></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Announcements -->
+<section id="announcements" class="py-5">
+  <div class="container">
+    <h2 class="text-center text-warning mb-4">📢 Latest Announcements</h2>
+    <div class="timeline">
+      <div class="timeline-item">Sunday को Meeting at 7PM</div>
+      <div class="timeline-item">New Task Assigned: Logo Update</div>
+      <div class="timeline-item">Team Outing Coming Soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- Members -->
+<section id="members" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center text-dark mb-4">हमारे Members</h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-3"><div class="card member-card text-center p-3 shadow-sm"><h4>🐯 Leader</h4><p>Your Name</p></div></div>
+      <div class="col-6 col-md-3"><div class="card member-card text-center p-3 shadow-sm"><h4>👤 Member 1</h4><p>Member Name</p></div></div>
+      <div class="col-6 col-md-3"><div class="card member-card text-center p-3 shadow-sm"><h4>👤 Member 2</h4><p>Member Name</p></div></div>
+      <div class="col-6 col-md-3"><div class="card member-card text-center p-3 shadow-sm"><h4>👤 Member 3</h4><p>Member Name</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="mb-2">© TEAM 0001 | Brotherhood • Loyalty • Respect</p>
+    <div>
+      <a href="#" class="text-warning me-3"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" class="text-warning me-3"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" class="text-warning me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+      <a href="#" class="text-warning"><i class="fab fa-telegram fa-lg"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background:linear-gradient(135deg,#0d1b2a,#1b263b);color:#fff;border:2px solid #d4af37;border-radius:15px;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold text-warning" id="loginModalLabel"><i class="fas fa-user-shield"></i> Member Login</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3"><label for="username" class="form-label fw-bold">Team ID</label><input type="text" class="form-control bg-dark text-white border-warning" id="username" placeholder="Enter your Team ID"></div>
+          <div class="mb-3"><label for="password" class="form-label fw-bold">Password</label><input type="password" class="form-control bg-dark text-white border-warning" id="password" placeholder="Enter your password"></div>
+          <div class="form-check mb-3"><input class="form-check-input border-warning" type="checkbox" id="remember"><label class="form-check-label" for="remember">Remember me</label></div>
+          <button type="submit" class="btn btn-warning w-100 fw-bold rounded-pill">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer border-0 text-center">
+        <p class="small text-light m-0">Forgot password? <a href="#" class="text-warning fw-bold">Click here</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

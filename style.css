@@ -1,0 +1,560 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel Decorative', cursive;
+  letter-spacing: 2px;
+}
+body, p, a, li {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+  color: #0d47a1;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.navbar .nav-link:hover {
+  color: #d4af37; /* Golden Hover */
+}
+.navbar-brand {
+  font-weight: bold;
+  color: #0d47a1;
+}
+/* Hero Section */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+/* Decorative shapes */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+#hero h1 span {
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+#hero img {
+  transition: transform 0.4s ease;
+}
+#hero img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+.btn-golden {
+  background-color: #d4af37;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+.btn-golden:hover {
+  background-color: #b7950b;
+  color: #fff;
+}
+/* About Section */
+.about h2 {
+  color: #0d47a1;
+  font-weight: 700;
+}
+.about p {
+  font-size: 1.1rem;
+}
+.about-img {
+  height: 450px;
+  width: 450px;
+}.icon-box {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  border: 2px solid #d4af37;
+  transition: all 0.4s ease;
+}
+.icon-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: linear-gradient(135deg, #1e293b, #2c3e50);
+  box-shadow: 0 0 25px rgba(212,175,55,0.7);
+}
+
+.gallery_span{
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+/* Gallery Hover Effects */
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h5 {
+  color: #ffc107; /* Bootstrap warning color */
+  text-align: center;
+}
+/* gallery end */
+
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Central vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #ffc107;
+  border-radius: 2px;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+/* Cards positioning */
+.timeline-card {
+  width: 35%;
+  position: relative;
+}
+
+.timeline-card.left {
+  left: 11%;
+  text-align: right;
+}
+
+.timeline-card.right {
+  left: 51%;
+  text-align: left;
+}
+
+/* Connector arrow */
+.timeline-card.left::after,
+.timeline-card.right::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  pointer-events: none;
+}
+
+.timeline-card.left::after {
+  right: -15px;
+  border-width: 10px;
+  border-left-color: #ffc107;
+}
+
+.timeline-card.right::after {
+  left: -15px;
+  border-width: 10px;
+  border-right-color: #ffc107;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-card,
+  .timeline-card.left,
+  .timeline-card.right {
+    width: 100%;
+    left: 5px !important;
+    text-align: left !important;
+  }
+
+  .timeline-card.left::after,
+  .timeline-card.right::after {
+    display: none;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+}
+
+/* Core Values */
+.values .card {
+  border: 2px solid #0d47a1;
+  transition: 0.3s;
+}
+.values .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+/* Announcements Timeline */
+
+/* Members */
+.member-card {
+  border: 1px solid #0d47a1;
+  transition: 0.3s;
+}
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(13, 71, 161, 0.4);
+}
+/* Founders section css */
+.founder-card {
+  background: #1b263b;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+.founder-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+  background-color: #1b263b;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.btn-warning:hover {
+  background-color: #ffb400;
+  color: #0d1b2a;
+  transition: all 0.3s ease;
+}
+
+/* Form card shadow */
+#contactForm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contactForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+/* Floating circular button */
+.btn-floating {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffc107, #ffb400);
+  color: #1b263b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.btn-floating:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.6);
+  background: linear-gradient(135deg, #ffb400, #ffc107);
+  color: #1b263b;
+}
+
+/* Modal form focus effect */
+#callbackForm input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+  background-color: #1b263b;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Get in Touch Card */
+.get-in-touch {
+  background-color: #1b263b; /* slightly lighter than main bg for contrast */
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+/* Hover effect */
+.get-in-touch:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 193, 7, 0.4);
+}
+
+/* Headings */
+.get-in-touch h5,
+.get-in-touch h6 {
+  letter-spacing: 0.5px;
+}
+.btn-callback-floating {
+  background: linear-gradient(135deg, #ffc107, #ffb400);
+  color: #1b263b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hover effect */
+.btn-callback-floating:hover {
+  background: linear-gradient(135deg, #ffb400, #ffc107);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6);
+  color: #1b263b;
+}
+
+/* Icon spacing */
+.btn-callback-floating i {
+  font-size: 1.1rem;
+}
+
+.mission-card {
+  background-color: #1b263b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 193, 7, 0.5);
+}
+
+.mission-card h5 {
+  color: #ffc107;
+  margin-bottom: 0.75rem;
+}
+
+.mission-card p {
+  color: #f8f9fa;
+  font-size: 0.95rem;
+}
+
+/* Contact Info Paragraphs */
+.get-in-touch p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Icons in contact info */
+.get-in-touch p i {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  color: #ffc107;
+  transition: color 0.3s ease;
+}
+
+/* Links in contact info */
+.get-in-touch p a {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.get-in-touch p a:hover {
+  color: #ffc107;
+}
+
+/* Social Icons */
+.get-in-touch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f9fa;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffc107, #ffb400);
+  color: #1b263b;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  opacity: 0; /* Hidden initially */
+  pointer-events: none;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.6);
+  background: linear-gradient(135deg, #ffb400, #ffc107);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* WhatsApp Floating Button */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 100px; /* Adjust distance from bottom */
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #25d366, #1ebe57);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.btn-whatsapp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #1ebe57, #25d366);
+  color: #fff;
+}
+
+
+
+/* Footer */
+footer a:hover {
+  color: #ffc107;
+  transition: 0.3s ease;
+}
+
+/* Social Icons Hover */
+footer a i:hover {
+  color: #ffc107;
+  transform: scale(1.2);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 575px) {
+  #contact h2.display-5 {
+    font-size: 1.8rem;
+  }
+
+  #contact p.lead {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  #contact .form-control {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  #contact button.btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #contact .get-in-touch h5,
+  #contact .get-in-touch h6 {
+    font-size: 1rem;
+  }
+
+  #contact .get-in-touch p {
+    font-size: 0.85rem;
+  }
+
+  #contact .get-in-touch a {
+    font-size: 0.85rem;
+  }
+
+  #contact .get-in-touch {
+    padding: 1rem !important;
+  }
+
+  /* Floating button adjustments */
+  .btn-callback-floating {
+    width: 100%;
+    height: 50px;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    /* position: absolute; */
+     display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+}
