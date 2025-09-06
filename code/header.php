@@ -101,10 +101,11 @@
                                   aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              <form id="adminLoginForm">
+                              <form id="adminLoginForm" action="/Admin/code/admin_login.php" method="post">
                                   <div class="mb-3">
-                                      <label class="form-label text-light">Username OR Email</label>
+                                      <label class="form-label text-light">Email Id</label>
                                       <input
+                                        name="email"
                                           type="text"
                                           class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                                           placeholder="Admin Username"
@@ -114,12 +115,13 @@
                                       <label class="form-label text-light">Password</label>
                                       <input
                                           type="password"
+                                          name="password"
                                           class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
                                           placeholder="Password"
                                           required />
                                   </div>
                                   <div class="d-grid">
-                                      <button type="submit" class="btn btn-warning fw-bold rounded-pill py-2">
+                                      <button type="submit" name="admin_login" class="btn btn-warning fw-bold rounded-pill py-2">
                                           Login
                                       </button>
                                   </div>
