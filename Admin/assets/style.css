@@ -1,6 +1,7 @@
 /* ===== Base Styles ===== */
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 
