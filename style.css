@@ -274,6 +274,16 @@ body, p, a, li {
   background-color: #34495e;
   cursor: pointer;
 }
+.nav-admin-btn {
+  transition: all 0.3s ease;
+}
+
+.nav-admin-btn:hover {
+  background-color: #ffc107;
+  color: #0d1b2a;
+  border-color: #ffc107;
+}
+
 
 
 /* Core Values */
