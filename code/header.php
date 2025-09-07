@@ -64,69 +64,10 @@
                                   </li>
                               <?php else: ?>
                                   <!-- Admin Login button -->
-                                  <li class="nav-item">
-                                      <button type="button" class="btn btn-outline-warning fw-bold rounded-pill px-3 py-1 nav-admin-btn"
-                                          data-bs-toggle="modal" data-bs-target="#adminLoginModal">
-                                          <i class="fas fa-user-shield me-1"></i>Login
-                                      </button>
-                                  </li>
+                                  <li class="nav-item"><a class="nav-link active text-light" href="../admin/dashboard/login.php">Admin Login</a></li>
                               <?php endif; ?>
 
                           </ul>
                       </div>
                   </div>
               </nav>
-
-
-              <!-- Admin login modal -->
-
-
-              <!-- Admin Login Modal (unchanged) -->
-              <div
-                  class="modal fade"
-                  id="adminLoginModal"
-                  tabindex="-1"
-                  aria-labelledby="adminLoginModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
-                          <div class="modal-header border-0">
-                              <h5 class="modal-title text-warning fw-bold" id="adminLoginModalLabel">
-                                  Admin Login
-                              </h5>
-                              <button
-                                  type="button"
-                                  class="btn-close btn-close-white"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                              <form id="adminLoginForm" action="/Admin/code/admin_login.php" method="post">
-                                  <div class="mb-3">
-                                      <label class="form-label text-light">Email Id</label>
-                                      <input
-                                        name="email"
-                                          type="text"
-                                          class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-                                          placeholder="Admin Username"
-                                          required />
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label text-light">Password</label>
-                                      <input
-                                          type="password"
-                                          name="password"
-                                          class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-                                          placeholder="Password"
-                                          required />
-                                  </div>
-                                  <div class="d-grid">
-                                      <button type="submit" name="admin_login" class="btn btn-warning fw-bold rounded-pill py-2">
-                                          Login
-                                      </button>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>

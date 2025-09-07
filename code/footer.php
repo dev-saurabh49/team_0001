@@ -29,6 +29,7 @@
           <li>
             <a href="#contact" class="text-light text-decoration-none">Contact</a>
           </li>
+          <li class="nav-item"><a class="nav-link active text-light" href="../admin/dashboard/login.php">Admin Login</a></li>
         </ul>
       </div>
 
@@ -39,6 +40,7 @@
         <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
         <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
         <a href="#" class="text-light fs-5"><i class="fab fa-linkedin-in"></i></a>
+        
       </div>
     </div>
 

@@ -38,6 +38,16 @@ if (isset($_POST['register_btn'])) {
         $insertStmt->bind_param("sssss", $name, $email, $phone, $hashedPassword, $profileFolder);
 
         if ($insertStmt->execute()) {
+
+            // Get the new member ID
+            $new_member_id = $insertStmt->insert_id;
+
+            // Log the registration activity
+            $activityStmt = $conn->prepare("INSERT INTO member_activity (member_id, activity_type) VALUES (?, 'register')");
+            $activityStmt->bind_param("i", $new_member_id);
+            $activityStmt->execute();
+            $activityStmt->close();
+
             echo "<script>alert('Registration Success');window.location.href = '../index.php';</script>";
         } else {
             echo "<script>alert('Registration Failed');window.location.href = '../index.php';</script>";
@@ -45,6 +55,5 @@ if (isset($_POST['register_btn'])) {
 
         $insertStmt->close();
     }
-}else{
-
 }
+?>

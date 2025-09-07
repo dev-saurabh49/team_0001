@@ -134,6 +134,98 @@
             </button>
           <?php endif; ?>
         </div>
+            <!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-light rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold text-warning" id="registerModalLabel">
+          <i class="fas fa-user-plus me-2"></i> Register
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="registerForm" action="./code/register_code.php" method="post" enctype="multipart/form-data">
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label class="form-label text-light">Full Name</label>
+            <input
+              name="name"
+              type="text"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="form-label text-light">Email</label>
+            <input
+              name="email"
+              type="email"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3">
+            <label class="form-label text-light">Phone</label>
+            <input
+              name="phone"
+              type="text"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label class="form-label text-light">Password</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <!-- Profile Picture -->
+          <div class="mb-3">
+            <label class="form-label text-light">Profile Picture</label>
+            <div class="position-relative">
+              <input
+                name="profile"
+                type="file"
+                class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                accept="image/*"
+                required
+              />
+              <i class="fas fa-camera position-absolute text-warning" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
+            </div>
+            <small class="text-light">Choose a profile picture (JPG, PNG, max 2MB)</small>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-grid">
+            <button
+              name="register_btn"
+              type="submit"
+              class="btn btn-warning fw-bold rounded-pill py-2"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
       </div>
