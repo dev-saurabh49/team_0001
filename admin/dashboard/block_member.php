@@ -22,12 +22,14 @@ if ($member_id > 0 && in_array($action, ['block', 'unblock'])) {
     $stmt->execute();
     $stmt->close();
 
-    // Track this activity in member_activity table
-    $activity_type = ($action === 'block') ? "Blocked by Admin" : "Unblocked by Admin";
+    // Track activity
+    $activity_type = ($action === 'block') ? "blocked" : "unblocked";
+
     $stmt2 = $conn->prepare("INSERT INTO member_activity (member_id, activity_type, activity_time) VALUES (?, ?, NOW())");
     $stmt2->bind_param("is", $member_id, $activity_type);
     $stmt2->execute();
     $stmt2->close();
+
 
     header("Location: members.php?updated=1");
     exit;

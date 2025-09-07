@@ -1,47 +1,94 @@
 <?php
-include "../../code/db_connection.php"; // Database connection
+include "../../code/db_connection.php";
 include "header.php";
 
-// Query latest 10 activities with member info
 $activityQuery = "
     SELECT ma.*, m.name, m.email
     FROM member_activity ma
     JOIN members m ON ma.member_id = m.id
     ORDER BY ma.activity_time DESC
-    LIMIT 10
 ";
-
 $result = $conn->query($activityQuery);
 
-if ($result->num_rows > 0) {
-    echo '<div class="container my-4">';
-    echo '<div class="row g-3">';
-
-    while($row = $result->fetch_assoc()){
-        $time = date("d M Y, H:i", strtotime($row['activity_time']));
-        echo '
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card bg-dark text-light shadow-lg border-0 rounded-4 p-3 h-100">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="avatar bg-warning text-dark rounded-circle d-flex justify-content-center align-items-center me-3" style="width:50px; height:50px; font-weight:bold;">
-                        '.strtoupper($row['name'][0]).'
-                    </div>
-                    <div>
-                        <h6 class="mb-0 fw-bold text-warning">'.$row['name'].'</h6>
-                        <small class="text-light">'.$row['email'].'</small>
-                    </div>
-                </div>
-                <p class="mb-2">'.$row['activity_type'].'</p>
-                <small class="text-info">'.$time.'</small>
-            </div>
-        </div>';
+function activityInfo($type)
+{
+    switch ($type) {
+        case 'register':
+            return ['bg-success', 'bi-person-plus-fill', 'Registered'];
+        case 'login':
+            return ['bg-primary', 'bi-box-arrow-in-right', 'Login'];
+        case 'logout':
+            return ['bg-secondary', 'bi-box-arrow-right', 'Logout'];
+        case 'approved':
+            return ['bg-success', 'bi-check-circle-fill', 'Approved'];
+        case 'blocked':
+            return ['bg-danger', 'bi-lock-fill', 'Blocked'];
+        case 'unblocked':
+            return ['bg-warning text-dark', 'bi-unlock-fill', 'Unblocked'];
+        default:
+            return ['bg-info', 'bi-info-circle-fill', 'No activity found'];
     }
-
-    echo '</div>'; // row
-    echo '</div>'; // container
-} else {
-    echo '<p class="text-warning text-center my-4">No recent activities found.</p>';
 }
-
-include "footer.php";
 ?>
+
+<div class="container my-4">
+    <h4 class="fw-bold mb-4">Recent Activities</h4>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Activity</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $serial = 1;
+                if ($result && $result->num_rows > 0):
+                    while ($row = $result->fetch_assoc()):
+                        [$badgeClass, $iconClass, $label] = activityInfo($row['activity_type']);
+                        $time = date("d M Y, H:i", strtotime($row['activity_time']));
+                ?>
+                        <tr>
+                            <td><?= $serial ?></td>
+                            <td>
+                                <span class="avatar bg-warning text-dark rounded-circle fw-bold d-inline-flex justify-content-center align-items-center me-2" style="width:35px; height:35px;">
+                                    <?= strtoupper($row['name'][0]) ?>
+                                </span>
+                                <?= htmlspecialchars($row['name']) ?>
+                            </td>
+                            <td><?= htmlspecialchars($row['email']) ?></td>
+                            <td>
+                                <span class="badge <?= $badgeClass ?>">
+                                    <i class="<?= $iconClass ?> me-1"></i>
+                                    <?= $label ?>
+                                </span>
+                            </td>
+                            <td><?= $time ?></td>
+                            <td>
+                                <form action="delete_activity.php" method="post" onsubmit="return confirm('Delete this activity?')" class="d-inline">
+                                    <input type="hidden" name="activity_id" value="<?= $row['id'] ?>">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete Activity">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php
+                        $serial++;
+                    endwhile;
+                else: ?>
+                    <tr>
+                        <td colspan="6" class="text-center text-warning">No recent activities found.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<?php include "footer.php"; ?>

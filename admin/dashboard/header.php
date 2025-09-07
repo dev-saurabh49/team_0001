@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -28,51 +33,46 @@
             <li><a href="./d.php" class="nav-link active"><i class="bi bi-grid"></i> Dashboard</a></li>
             <li><a href="#" class="nav-link"><i class="bi bi-people"></i> Teams</a></li>
             <li><a href="../dashboard/members.php" class="nav-link"><i class="bi bi-person-badge"></i> Members</a></li>
-            <li><a href="../dashboard/block_member.php" class="nav-link"><i class="bi bi-block-person"></i> Blocked Members</a></li>
-            <li><a href="#" class="nav-link"><i class="bi bi-check2-square"></i> Tasks</a></li>
-            <li><a href="#" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Reports</a></li>
+            <li><a href="../dashboard/tasks.php" class="nav-link"><i class="bi bi-check2-square"></i> Tasks</a></li>
+            <li><a href="./reports.php" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Reports</a></li>
             <li><a href="#" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
         </ul>
     </nav>
 
     <div class="content mt-3" style="padding-left:250px;">
         <!-- Top Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2">
-            <button class="btn d-lg-none me-2" id="mobileMenuBtn" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
-            <?php
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2 flex-column flex-lg-row">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <button class="btn d-lg-none me-2" id="mobileMenuBtn" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+                <?php if (isset($_SESSION['admin_name'])): ?>
+                    <div class="welcome-message text-primary fw-semibold me-3">
+                        Welcome, <?= htmlspecialchars($_SESSION['admin_name']) ?>!
+                    </div>
+                <?php endif; ?>
 
-            session_start();
-            if (isset($_SESSION['admin_name'])) {
-                echo '<div class="welcome-message text-primary fw-semibold me-3">Welcome, ' . $_SESSION['admin_name'] . '!</div>';
-            }
-            ?>
+                <form class="d-none d-md-flex ms-auto me-4 flex-grow-1" style="max-width: 300px;">
+                    <input class="form-control form-control-sm rounded-pill" type="search" placeholder="Search…" />
+                </form>
+            </div>
 
-
-            <form class="d-none d-md-flex ms-auto me-4">
-                <input class="form-control form-control-sm rounded-pill" type="search" placeholder="Search…" />
-            </form>
-            <div class="d-flex align-items-center">
-                <button id="modeToggle" class="mode-btn me-3" aria-label="Toggle dark mode"><i class="bi bi-moon"></i></button>
-                <a class="btn btn-link position-relative me-3" href="./show_activity.php"><i class="bi bi-bell fs-5"></i>
+            <div class="d-flex align-items-center mt-3 mt-lg-0">
+                <button id="modeToggle" class="mode-btn me-3" aria-label="Toggle dark mode">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <a class="btn btn-link position-relative me-3" href="./show_activity.php">
+                    <i class="bi bi-bell fs-5"></i>
                     <?php
                     include "../../code/db_connection.php";
-
-                    // Count latest activities (ya total activities)
                     $countQuery = "SELECT COUNT(*) as total FROM member_activity";
                     $result = $conn->query($countQuery);
                     $row = $result->fetch_assoc();
                     $activityCount = $row['total'];
                     ?>
-
-                    <!-- Button with dynamic badge -->
-                    
-                        <?php if ($activityCount > 0): ?>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                <?php echo $activityCount; ?>
-                            </span>
-                        <?php endif; ?>
-                  
-
+                    <?php if ($activityCount > 0): ?>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?= $activityCount ?>
+                        </span>
+                    <?php endif; ?>
                 </a>
                 <div class="dropdown profile-menu ms-2">
                     <button class="btn btn-link dropdown-toggle d-flex align-items-center py-0 px-2" data-bs-toggle="dropdown"
