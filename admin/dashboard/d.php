@@ -89,7 +89,7 @@ if (isset($_GET['delete_id'])) {
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-3">
+        <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="card p-3 h-100">
                 <div class="d-flex align-items-center">
                     <span class="bg-success bg-opacity-10 text-success rounded-circle p-3 me-3 fs-4 d-flex align-items-center justify-content-center">
@@ -98,6 +98,63 @@ if (isset($_GET['delete_id'])) {
                     <div>
                         <h5 class="mb-0 fw-bold">126</h5>
                         <small class="text-muted">Completed</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <?php
+        // Total complaints count  
+        $totalComplaintsResult = $conn->query("SELECT COUNT(*) AS total FROM complaints");
+        $totalComplaints = $totalComplaintsResult->fetch_assoc()['total'] ?? 0;
+
+        // Pending complaints count  
+        $pendingComplaintsResult = $conn->query("SELECT COUNT(*) AS total FROM complaints WHERE status = 'Pending'");
+        $pendingComplaints = $pendingComplaintsResult->fetch_assoc()['total'] ?? 0;
+
+        // Resolved complaints count  
+        $resolvedComplaintsResult = $conn->query("SELECT COUNT(*) AS total FROM complaints WHERE status = 'Resolved'");
+        $resolvedComplaints = $resolvedComplaintsResult->fetch_assoc()['total'] ?? 0;
+
+        ?>
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card p-3 shadow-sm rounded">
+                <div class="d-flex align-items-center">
+                    <span class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 fs-4 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-list-check"></i>
+                    </span>
+                    <div>
+                        <h5 class="mb-0 fw-bold"><?= $totalComplaints ?></h5>
+                        <small class="text-muted">Total Complaints</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Complaints -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card p-3 shadow-sm rounded">
+                <div class="d-flex align-items-center">
+                    <span class="bg-warning bg-opacity-10 text-warning rounded-circle p-3 me-3 fs-4 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-hourglass-split"></i>
+                    </span>
+                    <div>
+                        <h5 class="mb-0 fw-bold"><?= $pendingComplaints ?></h5>
+                        <small class="text-muted">Pending Complaints</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resolved Complaints -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card p-3 shadow-sm rounded">
+                <div class="d-flex align-items-center">
+                    <span class="bg-success bg-opacity-10 text-success rounded-circle p-3 me-3 fs-4 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-check-circle"></i>
+                    </span>
+                    <div>
+                        <h5 class="mb-0 fw-bold"><?= $resolvedComplaints ?></h5>
+                        <small class="text-muted">Resolved Complaints</small>
                     </div>
                 </div>
             </div>

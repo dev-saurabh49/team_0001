@@ -1,3 +1,117 @@
+<?php
+include './code/db_connection.php';  // Adjust path accordingly
+
+// Fetch maintenance mode status
+$result = $conn->query("SELECT is_active FROM maintenance_mode WHERE id = 1 LIMIT 1");
+$siteSettings = $result->fetch_assoc();
+
+if (!empty($siteSettings['is_active'])) {
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Maintenance Mode - Team 0001</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .site-name {
+            color: #76e2f1;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.25rem;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        /* Animated dots loader */
+        .loader {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .loader span {
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .loader span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loader span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0.7);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="site-name">Team 0001 Official Website</span><br>is Under Maintenance</h1>
+    <p>We're making improvements and will be back shortly.<br>Thank you for your patience!</p>
+    <div class="loader" aria-label="Loading animation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
+<?php
+    exit;
+}
+?>
+
+
+
 <?php include 'code/header.php'; ?>
 <!--Ends here  -->
 <!-- modal login -->
@@ -134,98 +248,92 @@
             </button>
           <?php endif; ?>
         </div>
-            <!-- Register Modal -->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark text-light rounded-4">
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold text-warning" id="registerModalLabel">
-          <i class="fas fa-user-plus me-2"></i> Register
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+        <!-- Register Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark text-light rounded-4">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold text-warning" id="registerModalLabel">
+                  <i class="fas fa-user-plus me-2"></i> Register
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
-      <div class="modal-body">
-        <form id="registerForm" action="./code/register_code.php" method="post" enctype="multipart/form-data">
-          <!-- Full Name -->
-          <div class="mb-3">
-            <label class="form-label text-light">Full Name</label>
-            <input
-              name="name"
-              type="text"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Name"
-              required
-            />
-          </div>
+              <div class="modal-body">
+                <form id="registerForm" action="./code/register_code.php" method="post" enctype="multipart/form-data">
+                  <!-- Full Name -->
+                  <div class="mb-3">
+                    <label class="form-label text-light">Full Name</label>
+                    <input
+                      name="name"
+                      type="text"
+                      class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                      placeholder="Your Name"
+                      required />
+                  </div>
 
-          <!-- Email -->
-          <div class="mb-3">
-            <label class="form-label text-light">Email</label>
-            <input
-              name="email"
-              type="email"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Email"
-              required
-            />
-          </div>
+                  <!-- Email -->
+                  <div class="mb-3">
+                    <label class="form-label text-light">Email</label>
+                    <input
+                      name="email"
+                      type="email"
+                      class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                      placeholder="Your Email"
+                      required />
+                  </div>
 
-          <!-- Phone -->
-          <div class="mb-3">
-            <label class="form-label text-light">Phone</label>
-            <input
-              name="phone"
-              type="text"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Phone Number"
-              required
-            />
-          </div>
+                  <!-- Phone -->
+                  <div class="mb-3">
+                    <label class="form-label text-light">Phone</label>
+                    <input
+                      name="phone"
+                      type="text"
+                      class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                      placeholder="Phone Number"
+                      required />
+                  </div>
 
-          <!-- Password -->
-          <div class="mb-3">
-            <label class="form-label text-light">Password</label>
-            <input
-              name="password"
-              type="password"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Password"
-              required
-            />
-          </div>
+                  <!-- Password -->
+                  <div class="mb-3">
+                    <label class="form-label text-light">Password</label>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                      placeholder="Password"
+                      required />
+                  </div>
 
-          <!-- Profile Picture -->
-          <div class="mb-3">
-            <label class="form-label text-light">Profile Picture</label>
-            <div class="position-relative">
-              <input
-                name="profile"
-                type="file"
-                class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-                accept="image/*"
-                required
-              />
-              <i class="fas fa-camera position-absolute text-warning" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
+                  <!-- Profile Picture -->
+                  <div class="mb-3">
+                    <label class="form-label text-light">Profile Picture</label>
+                    <div class="position-relative">
+                      <input
+                        name="profile"
+                        type="file"
+                        class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+                        accept="image/*"
+                        required />
+                      <i class="fas fa-camera position-absolute text-warning" style="top: 50%; right: 15px; transform: translateY(-50%); pointer-events: none;"></i>
+                    </div>
+                    <small class="text-light">Choose a profile picture (JPG, PNG, max 2MB)</small>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="d-grid">
+                    <button
+                      name="register_btn"
+                      type="submit"
+                      class="btn btn-warning fw-bold rounded-pill py-2">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <small class="text-light">Choose a profile picture (JPG, PNG, max 2MB)</small>
           </div>
-
-          <!-- Submit -->
-          <div class="d-grid">
-            <button
-              name="register_btn"
-              type="submit"
-              class="btn btn-warning fw-bold rounded-pill py-2"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
 
 
       </div>
@@ -879,4 +987,4 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<?php include 'code/footer.php';?>
+<?php include 'code/footer.php'; ?>

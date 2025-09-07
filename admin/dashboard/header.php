@@ -35,7 +35,23 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="../dashboard/members.php" class="nav-link"><i class="bi bi-person-badge"></i> Members</a></li>
             <li><a href="../dashboard/tasks.php" class="nav-link"><i class="bi bi-check2-square"></i> Tasks</a></li>
             <li><a href="./reports.php" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Reports</a></li>
-            <li><a href="#" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="./meetings.php" class="nav-link"><i class="bi bi-calendar-event"></i> Meetings</a></li>
+            <li><a href="./finance.php" class="nav-link"><i class="bi bi-currency-dollar"></i> Finance</a></li>
+            <li><a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-circle"></i> Complaint</a></li>
+            <li><a href="./admin_cmp.php" class="nav-link"><i class="bi bi-shield-check"></i> Admin Complaint</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pollsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-shield-check"></i> Polls
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="pollsDropdown">
+                    <li><a class="dropdown-item" href="./polls.php"><i class="bi bi-plus-circle"></i> Create Polls</a></li>
+                    <li><a class="dropdown-item" href="./see_polls.php"><i class="bi bi-eye"></i> View Polls</a></li>
+                    <li><a class="dropdown-item" href="./view_votes.php"><i class="bi bi-bar-chart"></i> View Votes</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="./settings.php" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
         </ul>
     </nav>
 
