@@ -31,7 +31,7 @@
                       <!-- Brand -->
                       <a class="navbar-brand d-flex align-items-center fw-bold text-warning" href="#">
                           <img src="images/0001.jpeg" alt="Team 0001 Logo" class="me-2 rounded-circle" style="height: 35px; width: 35px; object-fit: cover" />
-                          ★彡[ⲧē𝕒ɱ_𝟘𝟘𝟘1]彡★
+                          ⲧē𝕒ɱ_𝟘𝟘𝟘1
                       </a>
 
                       <!-- Toggler Button -->
@@ -43,7 +43,7 @@
                       <!-- Nav Links -->
                       <div class="collapse navbar-collapse" id="navbarNav">
                           <ul class="navbar-nav ms-auto text-center">
-                              <li class="nav-item"><a class="nav-link active text-light" href="#">Home</a></li>
+                              <li class="nav-item"><a class="nav-link active text-light" href="../index.php">Home</a></li>
                               <li class="nav-item"><a class="nav-link text-light" href="#about">About</a></li>
                               <li class="nav-item"><a class="nav-link text-light" href="#members">Journey</a></li>
                               <li class="nav-item"><a class="nav-link text-light" href="#founders">Founders</a></li>
@@ -53,7 +53,7 @@
                               <?php if (isset($_SESSION['user_name'])): ?>
                                   <!-- User is logged in -->
                                   <li class="nav-item">
-                                      <a class="nav-link text-warning fw-bold" href="user_dashboard.php">
+                                      <a class="nav-link text-warning fw-bold" href="../users/dashboard.php">
                                           <i class="fas fa-tachometer-alt me-1"></i> Dashboard
                                       </a>
                                   </li>

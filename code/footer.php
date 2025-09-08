@@ -1,4 +1,3 @@
-
 <footer
   style="
         background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
@@ -14,24 +13,20 @@
       </div>
 
       <!-- Quick Links -->
+      <!-- Quick Links -->
       <div class="col-md-4 text-center mb-3 mb-md-0">
         <h6 class="text-warning fw-bold mb-2">Quick Links</h6>
         <ul class="list-unstyled">
-          <li>
-            <a href="#hero" class="text-light text-decoration-none">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="text-light text-decoration-none">About</a>
-          </li>
-          <li>
-            <a href="#gallery" class="text-light text-decoration-none">Gallery</a>
-          </li>
-          <li>
-            <a href="#contact" class="text-light text-decoration-none">Contact</a>
-          </li>
-          <li class="nav-item"><a class="nav-link active text-light" href="../admin/dashboard/login.php">Admin Login</a></li>
+          <li><a href="#hero" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="#about" class="text-light text-decoration-none">About</a></li>
+          <li><a href="#gallery" class="text-light text-decoration-none">Gallery</a></li>
+          <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+          <?php if (!isset($_SESSION['admin_name'])): ?>
+            <li class="nav-item"><a class="nav-link active text-light" href="../admin/dashboard/login.php">Admin Login</a></li>
+          <?php endif; ?>
         </ul>
       </div>
+
 
       <!-- Social Media -->
       <div class="col-md-4 text-center text-md-end">
@@ -40,7 +35,7 @@
         <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
         <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
         <a href="#" class="text-light fs-5"><i class="fab fa-linkedin-in"></i></a>
-        
+
       </div>
     </div>
 

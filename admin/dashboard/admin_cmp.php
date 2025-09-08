@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../code/db_connection.php';
-include './header.php';
+
 
 // Admin session check
 if (!isset($_SESSION['admin_id'])) {
@@ -11,14 +11,13 @@ if (!isset($_SESSION['admin_id'])) {
 
 $message = "";
 
-// Mark complaint as resolved
 if (isset($_GET['resolve']) && is_numeric($_GET['resolve'])) {
     $id = (int)$_GET['resolve'];
     $stmt = $conn->prepare("UPDATE complaints SET status = 'Resolved' WHERE id = ?");
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $stmt->close();
-    header("Location: ./complaint.php");
+    header("Location: ./admin_cmp.php");
     exit;
 }
 
@@ -29,26 +28,30 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $stmt->close();
-    header("Location: complaints.php");
+    header("Location: ./admin_cmp.php");
     exit;
 }
 
 // Fetch complaints with member names
 $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c JOIN members m ON c.member_id = m.id ORDER BY c.created_at DESC");
+
+include './header.php';
 ?>
 
 <div class="container my-5">
     <h2 class="mb-4">Manage Member Complaints</h2>
 
     <?php if ($message): ?>
-    <div class="alert alert-info"><?= htmlspecialchars($message) ?></div>
+        <div class="alert alert-info"><?= htmlspecialchars($message) ?></div>
     <?php endif; ?>
 
     <div class="table-responsive">
         <table class="table table-bordered table-hover align-middle">
             <thead class="table-light">
                 <tr>
-                    <th>Member</th>
+                    <th>Complaint By</th>
+                    <th>Complaint On</th>
+
                     <th>Subject</th>
                     <th>Details</th>
                     <th>Status</th>
@@ -61,6 +64,7 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
                     <?php while ($row = $complaints->fetch_assoc()): ?>
                         <tr>
                             <td><?= htmlspecialchars($row['member_name']) ?></td>
+                            <td><?= htmlspecialchars($row['submitted_by_name']) ?></td>
                             <td><?= htmlspecialchars($row['subject']) ?></td>
                             <td><?= nl2br(htmlspecialchars($row['details'])) ?></td>
                             <td>
@@ -80,7 +84,9 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
-                    <tr><td colspan="6" class="text-center">No complaints found.</td></tr>
+                    <tr>
+                        <td colspan="6" class="text-center">No complaints found.</td>
+                    </tr>
                 <?php endif; ?>
             </tbody>
         </table>

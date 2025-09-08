@@ -150,8 +150,8 @@ $conn->close();
             class="profile-avatar"
             loading="lazy" />
         <div class="profile-header-info">
-            <h1><?php echo htmlspecialchars($name); ?></h1>
-            <p class="role"><?php echo htmlspecialchars($status); ?></p>
+            <h1 class="text-center"><?php echo htmlspecialchars($name); ?></h1>
+            <p class="role text-center"><?php echo htmlspecialchars($status); ?></p>
         </div>
     </div>
 

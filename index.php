@@ -110,7 +110,7 @@ if (!empty($siteSettings['is_active'])) {
 }
 ?>
 
-
+<!-- NOw listen generate a prompt for designning user_dashboard.php based on admin menus main theme #d4af37 and background: linear-gradient(135deg, #0d1b2a, #1b263b); and focus on generating a premium ui where user can see all things comes from admin using side bar or something else -->
 
 <?php include 'code/header.php'; ?>
 <!--Ends here  -->

@@ -1,41 +1,46 @@
 <?php
 session_start();
-include '../../code/db_connection.php';
-include './header.php';
+include '../code/db_connection.php';
 
-if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
 
 $message = "";
 
+// Current logged-in user ID
+$submitter_id = $_SESSION['user_id'] ?? 0;
+$submitter_name = $_SESSION['user_name'] ?? 'Unknown';
+
 // Handle new complaint submission
 if (isset($_POST['add_complaint'])) {
     $member_id = intval($_POST['member_id']);
     $subject = trim($_POST['subject']);
     $details = trim($_POST['details']);
-
+    
     if ($member_id > 0 && $subject && $details) {
-        $stmt = $conn->prepare("INSERT INTO complaints (member_id, subject, details, status, created_at) VALUES (?, ?, ?, 'Pending', NOW())");
-        $stmt->bind_param('iss', $member_id, $subject, $details);
+        // Insert complaint with submitter info
+        $stmt = $conn->prepare("INSERT INTO complaints (member_id, submitted_by, submitted_by_name, subject, details, status, created_at) VALUES (?, ?, ?, ?, ?, 'Pending', NOW())");
+        $stmt->bind_param('iisss', $member_id, $submitter_id, $submitter_name, $subject, $details);
         $stmt->execute();
         $stmt->close();
+
         $message = "Complaint submitted successfully.";
+
+        // Log member activity for submitter only
+        $stmt2 = $conn->prepare("INSERT INTO member_activity (member_id, activity_type, activity_time) VALUES (?, ?, ?)");
+        $activity_type = 'complaint_submitted';
+        $activity_time = date('Y-m-d H:i:s');
+        $stmt2->bind_param("iss", $submitter_id, $activity_type, $activity_time);
+
+        if ($stmt2->execute() === false) {
+            die("Error inserting activity: " . $stmt2->error);
+        }
+        $stmt2->close();
     } else {
         $message = "Please fill all fields.";
     }
-
-    // After successfully inserting complaint into complaints table
-    $stmt2 = $conn->prepare("INSERT INTO member_activity (member_id, activity_type, activity_time) VALUES (?, ?, ?)");
-    $activity_type = 'complaint_submitted';
-    $activity_time = date('Y-m-d H:i:s');
-    $stmt2->bind_param("iss", $member_id, $activity_type, $activity_time);
-
-    if ($stmt2->execute() === false) {
-        die("Error inserting activity: " . $stmt2->error);
-    }
-    $stmt2->close();
 }
 
 // Mark complaint resolved
@@ -63,10 +68,20 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 // Fetch members for select dropdown
 $members = $conn->query("SELECT id, name FROM members ORDER BY name ASC");
 
-// Fetch all complaints with member name
-$complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c JOIN members m ON c.member_id = m.id ORDER BY c.created_at DESC");
+// Fetch complaints submitted by logged-in user only
+$stmt = $conn->prepare("
+    SELECT c.*, m.name AS member_name 
+    FROM complaints c 
+    JOIN members m ON c.member_id = m.id 
+    WHERE c.submitted_by = ? 
+    ORDER BY c.created_at DESC
+");
+$stmt->bind_param("i", $submitter_id);
+$stmt->execute();
+$complaints = $stmt->get_result();
+$stmt->close();
 ?>
-
+<?php include './head.php'; ?>
 <div class="container my-5">
     <h2 class="mb-4">Member Complaints</h2>
 
@@ -79,6 +94,9 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
         <div class="card-header">Submit New Complaint</div>
         <div class="card-body">
             <form method="POST" novalidate>
+                <input type="hidden" name="submitted_by" value="<?= htmlspecialchars($submitter_id) ?>">
+                <input type="hidden" name="submitted_by_name" value="<?= htmlspecialchars($submitter_name) ?>">
+
                 <div class="mb-3">
                     <label for="member_id" class="form-label">Select Member</label>
                     <select name="member_id" id="member_id" class="form-select" required>
@@ -102,7 +120,7 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
     </div>
 
     <!-- Complaints List -->
-    <h4>All Complaints</h4>
+    <h4>All Complaints You Submitted</h4>
     <div class="table-responsive">
         <table class="table table-bordered table-hover align-middle">
             <thead class="table-light">
@@ -112,7 +130,6 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
                     <th>Details</th>
                     <th>Status</th>
                     <th>Submitted At</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -130,12 +147,7 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
                                 <?php endif; ?>
                             </td>
                             <td><?= htmlspecialchars($row['created_at']) ?></td>
-                            <td>
-                                <?php if ($row['status'] !== 'Resolved'): ?>
-                                    <a href="?resolve=<?= $row['id'] ?>" class="btn btn-sm btn-success" onclick="return confirm('Mark as resolved?')">Resolve</a>
-                                <?php endif; ?>
-                                <a href="?delete=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this complaint?')">Delete</a>
-                            </td>
+                            
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
@@ -147,5 +159,4 @@ $complaints = $conn->query("SELECT c.*, m.name AS member_name FROM complaints c 
         </table>
     </div>
 </div>
-
-<?php include './footer.php'; ?>
+<?php include './foot.php'; ?>
