@@ -103,6 +103,8 @@ if (!empty($siteSettings['is_active'])) {
         <span></span>
         <span></span>
     </div>
+
+    <a href="./admin/dashboard/login.php" class="btn btn-warning text-decoration-none">admin_login</a>
 </body>
 </html>
 <?php
@@ -230,7 +232,7 @@ if (!empty($siteSettings['is_active'])) {
             <button class="btn btn-success fw-bold rounded-pill px-4 py-2 w-100 w-sm-auto mb-2 mb-sm-0" disabled>
               <i class="fas fa-user"></i> Hello, <?php echo $_SESSION['user_name']; ?>
             </button>
-            <a href="user_dashboard.php" class="btn btn-outline-success fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto mb-2 mb-sm-0">
+            <a href="users/dashboard.php" class="btn btn-outline-success fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto mb-2 mb-sm-0">
               <i class="fas fa-tachometer-alt me-2"></i> Dashboard
             </a>
             <a href="code/logout.php" class="btn btn-danger fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto">
