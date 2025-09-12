@@ -1,14 +1,23 @@
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #222;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel Decorative', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", cursive;
   letter-spacing: 2px;
 }
-body, p, a, li {
-  font-family: 'Poppins', sans-serif;
+body,
+p,
+a,
+li {
+  font-family: "Poppins", sans-serif;
 }
 
 /* Navbar */
@@ -59,7 +68,17 @@ body, p, a, li {
 }
 #hero img {
   transition: transform 0.4s ease;
+  /* margin-top: 40px; default for desktop */
 }
+
+/* Mobile screens (up to 768px) */
+@media (max-width: 768px) {
+  #hero  {
+    margin-top: 50px; /* less top margin for mobile */
+    
+  }
+}
+
 #hero img:hover {
   transform: scale(1.08) rotate(3deg);
 }
@@ -86,7 +105,8 @@ body, p, a, li {
 .about-img {
   height: 450px;
   width: 450px;
-}.icon-box {
+}
+.icon-box {
   background: linear-gradient(135deg, #0d1b2a, #1b263b);
   border: 2px solid #d4af37;
   transition: all 0.4s ease;
@@ -94,10 +114,10 @@ body, p, a, li {
 .icon-box:hover {
   transform: translateY(-10px) scale(1.05);
   background: linear-gradient(135deg, #1e293b, #2c3e50);
-  box-shadow: 0 0 25px rgba(212,175,55,0.7);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
 }
 
-.gallery_span{
+.gallery_span {
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 }
 /* Gallery Hover Effects */
@@ -138,72 +158,7 @@ body, p, a, li {
 }
 /* gallery end */
 
-
 /* Timeline container */
-.timeline {
-  position: relative;
-  padding: 2rem 0;
-}
-
-/* Central vertical line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: #ffc107;
-  border-radius: 2px;
-}
-
-/* Timeline items */
-.timeline-item {
-  position: relative;
-  width: 100%;
-  margin-bottom: 4rem;
-}
-
-/* Cards positioning */
-.timeline-card {
-  width: 35%;
-  position: relative;
-}
-
-.timeline-card.left {
-  left: 11%;
-  text-align: right;
-}
-
-.timeline-card.right {
-  left: 51%;
-  text-align: left;
-}
-
-/* Connector arrow */
-.timeline-card.left::after,
-.timeline-card.right::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  width: 0;
-  height: 0;
-  border: solid transparent;
-  pointer-events: none;
-}
-
-.timeline-card.left::after {
-  right: -15px;
-  border-width: 10px;
-  border-left-color: #ffc107;
-}
-
-.timeline-card.right::after {
-  left: -15px;
-  border-width: 10px;
-  border-right-color: #ffc107;
-}
 
 /* Card hover effect */
 .card:hover {
@@ -284,8 +239,6 @@ body, p, a, li {
   border-color: #ffc107;
 }
 
-
-
 /* Core Values */
 .values .card {
   border: 2px solid #0d47a1;
@@ -331,9 +284,21 @@ body, p, a, li {
   color: #0d1b2a;
   transition: all 0.3s ease;
 }
+/* Scale effect for side slides */
+#topMembersSplide .splide__slide {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+#topMembersSplide .splide__slide.is-active {
+  transform: scale(1);
+  opacity: 1;
+}
 
 /* Form card shadow */
 #contactForm {
+  /* padding-bottom: 80px; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -548,8 +513,6 @@ html {
   color: #fff;
 }
 
-
-
 /* Footer */
 footer a:hover {
   color: #ffc107;
@@ -607,9 +570,51 @@ footer a i:hover {
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
     /* position: absolute; */
-     display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
 }
+/* Testimonials scaling effect */
+#testimonialsSplide .splide__slide {
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#testimonialsSplide .splide__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.star-rating {
+  font-size: 2.5rem;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+.star-rating .star.hover,
+.star-rating .star.selected {
+  color: #ffc107; /* gold color */
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ffc107;
+}
+
+
+  @keyframes fadeInUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .btn-warning {
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-warning:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  }

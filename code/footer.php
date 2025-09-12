@@ -57,6 +57,156 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+  togglePassword.addEventListener("click", function () {
+    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
+    this.querySelector("i").classList.toggle("fa-eye-slash");
+  });
+</script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    speed: 800,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#topMembersSplide', {
+    type       : 'loop',
+    perPage    : 1,
+    focus      : 'center',
+    autoplay   : true,
+    interval   : 2500,
+    pauseOnHover: false,
+    arrows     : false,   // remove arrows
+    pagination : false,   // remove dots
+    padding    : '15%',
+    gap        : '1rem',
+    breakpoints: {
+      576: { perPage: 1.1, padding: '5%', gap: '0.5rem' },
+    },
+  }).mount();
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#testimonialsSplide', {
+    type       : 'loop',
+    perPage    : 1,
+    focus      : 'center',
+    autoplay   : true,
+    interval   : 3500,
+    pauseOnHover: true,
+    arrows     : false, // no arrows
+    pagination : false, // no dots
+    gap        : '1rem',
+    padding    : '10%',
+    breakpoints: {
+      576: { perPage: 1.1, padding: '5%' }
+    },
+  }).mount();
+});
+</script>
+<script>
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const speed = 50; // lower = faster
+    const increment = target / speed;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  // Trigger when visible (simple approach with IntersectionObserver)
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateCount();
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(counter);
+});
+</script>
+
+<script>
+const stars = document.querySelectorAll('.star-rating .star');
+let selectedRating = 0;
+
+stars.forEach(star => {
+  star.addEventListener('mouseover', () => {
+    stars.forEach(s => s.classList.remove('hover'));
+    for (let i = 0; i < star.dataset.value; i++) {
+      stars[i].classList.add('hover');
+    }
+  });
+
+  star.addEventListener('mouseout', () => {
+    stars.forEach(s => s.classList.remove('hover'));
+  });
+
+  star.addEventListener('click', () => {
+    selectedRating = star.dataset.value;
+    stars.forEach(s => s.classList.remove('selected'));
+    for (let i = 0; i < selectedRating; i++) {
+      stars[i].classList.add('selected');
+    }
+  });
+});
+
+// Handle submit
+document.getElementById('submitRating').addEventListener('click', () => {
+  const comment = document.getElementById('ratingComment').value.trim();
+  if (selectedRating === 0) {
+    alert("Please select a star rating!");
+    return;
+  }
+
+});
+</script>
+
+
+
+<!-- aos -->
+ <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true,
+  offset: 50, // smaller offset triggers animation sooner
+});
+
+
+</script>
+
 <script src="./script.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
