@@ -1,5 +1,3 @@
-
-
 <!-- NOw listen generate a prompt for designning user_dashboard.php based on admin menus main theme #d4af37 and background: linear-gradient(135deg, #0d1b2a, #1b263b); and focus on generating a premium ui where user can see all things comes from admin using side bar or something else -->
 
 <?php include 'code/header.php'; ?>
@@ -524,20 +522,7 @@
       </div>
 
       <!-- Founder 2 -->
-      <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card founder-card h-100 shadow-lg border-0 text-center p-4">
-          <img
-            src="images/pandey.jpeg"
-            alt="Founder 2"
-            class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
-            style="width: 130px; height: 130px; object-fit: cover" />
-          <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
-          <p class="text-light small">Co-Founder</p>
-          <blockquote class="fst-italic text-light small">
-            "Brotherhood is the foundation of Team 0001."
-          </blockquote>
-        </div>
-      </div>
+
 
       <!-- Founder 3 -->
       <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
@@ -663,7 +648,7 @@
 
 <!-- Hover Animation -->
 <style>
-    .member-card {
+  .member-card {
     background: rgba(17, 17, 17, 0.85);
     border-radius: 20px;
     transition: all 0.4s ease;
@@ -706,6 +691,7 @@
     from {
       transform: scaleX(0);
     }
+
     to {
       transform: scaleX(1);
     }

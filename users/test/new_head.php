@@ -298,9 +298,7 @@
         .dashboard-title {
             font-size: 2.4rem;
             font-weight: 800;
-            background: linear-gradient(90deg, #d4af37, #f0e68c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(90deg, #d4af37, #f0e68c);;
             animation: fadeInSlide 1s ease forwards;
             margin-bottom: 0.5rem;
         }
