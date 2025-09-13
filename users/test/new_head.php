@@ -363,6 +363,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="./members.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Team
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="./dsh.php" class="nav-link">
                         <i class="bi bi-speedometer2 me-2"></i> Dashboard
                     </a>
@@ -430,6 +435,11 @@
                 <li class="nav-item">
                     <a href="../../index.php" class="nav-link">
                         <i class="bi bi-speedometer2 me-2"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./members.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Team
                     </a>
                 </li>
                 <li class="nav-item">

@@ -1,6 +1,6 @@
 <?php include "./new_head.php"; ?>
 <div class="dashboard-header mb-5 text-center">
-    <h1 class="dashboard-title">Dashboard</h1>
+    <h1 class="dashboard-title text-warning" style="background: transparent;">Dashboard</h1>
     <div class="title-underline mx-auto"></div>
     <p class="dashboard-subtitle">Welcome <span><?= htmlspecialchars($user_global['name']) ?></span> in Team 0001</p>
 </div>

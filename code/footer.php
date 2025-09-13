@@ -59,6 +59,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('premiumLoader');
+    setTimeout(() => {
+      loader.classList.add('fade-out');
+      setTimeout(() => loader.style.display = 'none', 600);
+    }, 2500); // 4 seconds
+  });
+</script>
+
+
+<script>
   const togglePassword = document.getElementById("togglePassword");
   const passwordInput = document.getElementById("password");
   togglePassword.addEventListener("click", function () {

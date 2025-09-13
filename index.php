@@ -196,10 +196,10 @@
     <div
       class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
       <div class="col-lg-7 mb-4 mb-lg-0 mt-4 mt-lg-5">
-        <h1 class="display-5 fw-bold text-warning mb-3">
+        <h1 class="display-5 fw-bold text-warning mb-3" data-aos="fade-right">
           Welcome to <span class="text-light">Team 0001</span>
         </h1>
-        <p class="lead mb-4 px-2 px-lg-0 mt-3">
+        <p class="lead mb-4 px-2 px-lg-0 mt-3" data-aos="fade-up">
           <span class="fw-bold text-warning">
             Strength >> Unity >> Brotherhood
           </span>
@@ -210,7 +210,7 @@
             supporting each other through every challenge.
           </span>
         </p>
-        <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 align-items-center justify-content-center justify-content-sm-start">
+        <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 align-items-center justify-content-center justify-content-sm-start" data-aos="zoom-in" data-aos-delay="200">
           <?php if (isset($_SESSION['user_email'])): ?>
             <!-- User is logged in -->
             <!-- <button class="btn btn-success fw-bold rounded-pill px-4 py-2 w-100 w-sm-auto mb-2 mb-sm-0" disabled>
