@@ -218,7 +218,7 @@
             <!-- <button class="btn btn-success fw-bold rounded-pill px-4 py-2 w-100 w-sm-auto mb-2 mb-sm-0" disabled>
               <i class="fas fa-user"></i> Hello, <?php echo $_SESSION['user_name']; ?>
             </button> -->
-            <a href="./users//test/dsh.php" class="btn btn-outline-success fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto mb-2 mb-sm-0">
+            <a href="./users/test/dsh.php" target="_blank" class="btn btn-outline-success fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto mb-2 mb-sm-0">
               <i class="fas fa-tachometer-alt me-2"></i> Dashboard
             </a>
             <a href="code/logout.php" class="btn btn-danger fw-bold px-4 py-2 rounded-pill w-100 w-sm-auto">
@@ -587,9 +587,9 @@
 </div>
 
 
-<!-- Top Members Section -->
 <section id="top-members" class="py-5" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: #fff;">
   <div class="container">
+    <!-- Section Title -->
     <div class="row mb-5 text-center">
       <div class="col">
         <h2 class="display-5 fw-bold text-warning mb-3">
@@ -604,21 +604,21 @@
     <!-- Desktop Grid -->
     <div class="row d-none d-lg-flex g-4 justify-content-center">
       <div class="col-12 col-md-4">
-        <div class="card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark" data-aos="fade-up">
+        <div class="card member-card h-100 text-center p-4" data-aos="fade-up">
           <img src="images/member1.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
           <h5 class="fw-bold text-warning">Rishabh Shukla</h5>
           <p class="text-light small">Lead Strategist</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
-        <div class="card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark" data-aos="fade-up" data-aos-delay="100">
+        <div class="card member-card h-100 text-center p-4" data-aos="fade-up" data-aos-delay="100">
           <img src="images/member2.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
           <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
           <p class="text-light small">Co-Organizer</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
-        <div class="card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark" data-aos="fade-up" data-aos-delay="200">
+        <div class="card member-card h-100 text-center p-4" data-aos="fade-up" data-aos-delay="200">
           <img src="images/member3.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
           <h5 class="fw-bold text-warning">Ananya Sharma</h5>
           <p class="text-light small">Event Coordinator</p>
@@ -627,13 +627,12 @@
     </div>
 
     <!-- Mobile Slider -->
-    <!-- Mobile Slider for Top Members -->
     <div class="splide d-lg-none" id="topMembersSplide">
       <div class="splide__track">
         <ul class="splide__list">
           <!-- Slide 1 -->
           <li class="splide__slide">
-            <div class="card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark">
+            <div class="card member-card h-100 text-center p-4">
               <img src="images/member1.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
               <h5 class="fw-bold text-warning">Rishabh Shukla</h5>
               <p class="text-light small">Lead Strategist</p>
@@ -641,7 +640,7 @@
           </li>
           <!-- Slide 2 -->
           <li class="splide__slide">
-            <div class="card cus-card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark">
+            <div class="card member-card h-100 text-center p-4">
               <img src="images/member2.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
               <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
               <p class="text-light small">Co-Organizer</p>
@@ -649,7 +648,7 @@
           </li>
           <!-- Slide 3 -->
           <li class="splide__slide">
-            <div class="card cus-card member-card h-100 shadow-lg border-0 text-center p-4 bg-dark">
+            <div class="card member-card h-100 text-center p-4">
               <img src="images/member3.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
               <h5 class="fw-bold text-warning">Ananya Sharma</h5>
               <p class="text-light small">Event Coordinator</p>
@@ -658,22 +657,58 @@
         </ul>
       </div>
     </div>
-
-
   </div>
 </section>
 
 
 <!-- Hover Animation -->
 <style>
-  .member-card:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
+    .member-card {
+    background: rgba(17, 17, 17, 0.85);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    border: none;
   }
 
-  .member-img:hover {
+  .member-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.45);
+  }
+
+  .member-card img {
+    transition: all 0.4s ease;
+  }
+
+  .member-card:hover img {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
+    border-color: #ffcc00;
+  }
+
+  .gallery_span {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gallery_span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    border-radius: 5px;
+    animation: underline 2s infinite alternate;
+  }
+
+  @keyframes underline {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 </style>
 
@@ -738,10 +773,10 @@
     </div>
   </div>
 </div>
-
 <!-- Testimonials Section -->
 <section id="testimonials" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
   <div class="container">
+    <!-- Section Title -->
     <div class="row mb-5 text-center">
       <div class="col">
         <h2 class="display-5 fw-bold text-warning mb-3">
@@ -760,9 +795,9 @@
 
           <!-- Testimonial 1 -->
           <li class="splide__slide">
-            <div class="card p-4 shadow-lg bg-dark border-0" data-aos="fade-up">
+            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up">
               <div class="text-center">
-                <img src="images/member1.jpg" class="rounded-circle mb-3 shadow-sm" style="width:80px;height:80px;object-fit:cover;">
+                <img src="images/member1.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
                 <p class="text-light fst-italic">
                   "Team 0001 is the most dedicated and organized team I have worked with. Their discipline and unity are unmatched!"
                 </p>
@@ -774,9 +809,9 @@
 
           <!-- Testimonial 2 -->
           <li class="splide__slide">
-            <div class="card p-4 shadow-lg bg-dark border-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="100">
               <div class="text-center">
-                <img src="images/member2.jpg" class="rounded-circle mb-3 shadow-sm" style="width:80px;height:80px;object-fit:cover;">
+                <img src="images/member2.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
                 <p class="text-light fst-italic">
                   "Amazing team with a strong vision. Their events always leave a positive impact on the community."
                 </p>
@@ -788,9 +823,9 @@
 
           <!-- Testimonial 3 -->
           <li class="splide__slide">
-            <div class="card p-4 shadow-lg bg-dark border-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="200">
               <div class="text-center">
-                <img src="images/member3.jpg" class="rounded-circle mb-3 shadow-sm" style="width:80px;height:80px;object-fit:cover;">
+                <img src="images/member3.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
                 <p class="text-light fst-italic">
                   "Joining Team 0001 was the best decision! The team spirit is incredible and they inspire everyone around them."
                 </p>
@@ -806,6 +841,40 @@
   </div>
 </section>
 
+<!-- Premium Styling -->
+<style>
+  .testimonial-card {
+    background: rgba(17, 17, 17, 0.85);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+  }
+
+  .testimonial-card img {
+    transition: all 0.4s ease;
+  }
+
+  .testimonial-card:hover img {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+  }
+
+  #testimonials .splide__pagination__page {
+    background: #fff !important;
+    opacity: 0.5;
+  }
+
+  #testimonials .splide__pagination__page.is-active {
+    background: #ffcc00 !important;
+    transform: scale(1.3);
+    opacity: 1;
+  }
+</style>
 
 <!-- fun facyts -->
 <!-- Stats / Fun Facts Section -->
@@ -1024,7 +1093,7 @@
     <div
       class="row justify-content-center align-items-start flex-column-reverse flex-lg-row">
       <!-- Contact Form -->
-      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
         <form id="contactForm" class="p-4 bg-dark rounded-4 shadow-lg">
           <div class="mb-3">
             <label class="form-label text-light">Name</label>
@@ -1064,7 +1133,7 @@
       </div>
 
       <!-- Contact Info -->
-      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0 " data-aos="fade-up">
         <div class="get-in-touch p-4 bg-dark rounded-4 shadow-lg h-100">
           <h5 class="text-warning fw-bold mb-4 text-center text-lg-start">
             Get in Touch
@@ -1127,7 +1196,7 @@
 
     <div class="row g-4 justify-content-center align-items-start">
       <!-- Left Side: User Info Form -->
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6" data-aos="fade-up">
         <div class="card bg-dark text-light shadow-lg border-warning rounded-4 p-4">
           <h5 class="text-warning fw-bold mb-4 text-center">Your Details</h5>
           <form id="userForm" enctype="multipart/form-data">
@@ -1148,7 +1217,7 @@
       </div>
 
       <!-- Right Side: Stars & Comment -->
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6" data-aos="fade-up">
         <div class="card bg-dark text-light shadow-lg border-warning rounded-4 p-4">
           <h5 class="text-warning fw-bold mb-4 text-center">Your Rating</h5>
           <div class="star-rating mb-3 text-center">

@@ -150,7 +150,7 @@
           <head>
               <meta charset="UTF-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>TEAM 0001 - Homepage</title>
+              <title>TEAM 0001 || Official</title>
               <!-- Bootstrap 5 -->
               <!-- AOS CSS -->
               <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
@@ -177,91 +177,131 @@
           </head>
 
           <body>
-              <!-- Navbar -->
-              <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background: #0d1b2a">
+              <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background: #0d1b2a;">
                   <div class="container">
                       <!-- Brand -->
-                      <a class="navbar-brand d-flex align-items-center fw-bold text-warning" href="#">
-                          <img src="images/0001.jpeg" alt="Team 0001 Logo" class="me-2 rounded-circle" style="height: 35px; width: 35px; object-fit: cover" />
+                      <a class="navbar-brand d-flex align-items-center fw-bold text-warning" href="../index.php">
+                          <img src="images/0001.jpeg" alt="Team 0001 Logo" class="me-2 rounded-circle"
+                              style="height: 35px; width: 35px; object-fit: cover;" />
                           ⲧē𝕒ɱ_𝟘𝟘𝟘1
                       </a>
 
-                      <!-- Toggler Button -->
-                      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                      <!-- Toggler for mobile -->
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                       </button>
 
-                      <!-- Nav Links -->
+                      <!-- Navbar links -->
                       <div class="collapse navbar-collapse" id="navbarNav">
-                          <ul class="navbar-nav ms-auto text-center align-items-center">
-                              <!-- Main Pages -->
+                          <ul class="navbar-nav ms-auto text-start align-items-lg-center">
+
+                              <!-- Home -->
                               <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../index.php">
-                                      Home
-                                  </a>
-                              </li>
-                              <!-- <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../about.php">
-                                      About Us
-                                  </a>
-                              </li> -->
-                              <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'journey.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../journey.php">
-                                      Journey
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'mission.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../mission.php">
-                                      Our Mission
+                                  <a class="nav-link d-flex align-items-center <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../index.php">
+                                      <i class="fas fa-home me-2"></i> Home
                                   </a>
                               </li>
 
-                              <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'gallery.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../gallery.php">
-                                      Gallery
+                              <!-- About Dropdown -->
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle d-flex align-items-center <?php echo (basename($_SERVER['PHP_SELF']) == 'about.php' || basename($_SERVER['PHP_SELF']) == 'mission.php' || basename($_SERVER['PHP_SELF']) == 'founders.php' || basename($_SERVER['PHP_SELF']) == 'rate.php') ? 'active text-warning fw-bold' : 'text-light'; ?>"
+                                      href="#" id="navbarAboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="fas fa-users me-2"></i> About
                                   </a>
+                                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarAboutDropdown">
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active text-warning fw-bold' : ''; ?>" href="../about.php">
+                                              <i class="fas fa-info-circle me-2"></i> About Us
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'mission.php' ? 'active text-warning fw-bold' : ''; ?>" href="../mission.php">
+                                              <i class="fas fa-bullseye me-2"></i> Our Mission
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'founders.php' ? 'active text-warning fw-bold' : ''; ?>" href="../founders.php">
+                                              <i class="fas fa-user-friends me-2"></i> Founders
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'rate.php' ? 'active text-warning fw-bold' : ''; ?>" href="../rate.php">
+                                              <i class="fas fa-star me-2"></i> Rate Us
+                                          </a>
+                                      </li>
+                                  </ul>
                               </li>
+
+                              <!-- Media Dropdown -->
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle d-flex align-items-center <?php echo (basename($_SERVER['PHP_SELF']) == 'gallery.php' || basename($_SERVER['PHP_SELF']) == 'video.php') ? 'active text-warning fw-bold' : 'text-light'; ?>" href="#"
+                                      id="navbarMediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="fas fa-images me-2"></i> Media
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarMediaDropdown">
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'gallery.php' ? 'active text-warning fw-bold' : ''; ?>" href="../gallery.php">
+                                              <i class="fas fa-image me-2"></i> Gallery
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a class="dropdown-item <?php echo basename($_SERVER['PHP_SELF']) == 'video.php' ? 'active text-warning fw-bold' : ''; ?>" href="../video.php">
+                                              <i class="fas fa-video me-2"></i> Videos
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+
+                              <!-- Journey -->
                               <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'video.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../video.php">
-                                      Videos
+                                  <a class="nav-link d-flex align-items-center <?php echo basename($_SERVER['PHP_SELF']) == 'journey.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../journey.php">
+                                      <i class="fas fa-route me-2"></i> Journey
                                   </a>
                               </li>
 
+                              <!-- Testimonials -->
                               <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'testimonials.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../testimonials.php">
-                                      Testimonials
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../contact.php">
-                                      Contact US
+                                  <a class="nav-link d-flex align-items-center <?php echo basename($_SERVER['PHP_SELF']) == 'testimonials.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../testimonials.php">
+                                      <i class="fas fa-comments me-2"></i> Testimonials
                                   </a>
                               </li>
 
+                              <!-- Contact -->
+                              <li class="nav-item">
+                                  <a class="nav-link d-flex align-items-center <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../contact.php">
+                                      <i class="fas fa-envelope me-2"></i> Contact
+                                  </a>
+                              </li>
 
-
-                              <!-- User-specific -->
+                              <!-- User Dropdown -->
                               <?php if (isset($_SESSION['user_name'])): ?>
-                                  <li class="nav-item">
-                                      <a class="nav-link text-warning fw-bold" href="../users/dashboard.php">
-                                          <i class="fas fa-tachometer-alt me-1"></i> Dashboard
+                                  <li class="nav-item dropdown">
+                                      <a class="nav-link dropdown-toggle d-flex align-items-center text-warning fw-bold" href="#" id="userDropdown"
+                                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <i class="fas fa-user-circle me-2"></i> Account
                                       </a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link text-danger fw-semibold" href="code/logout.php">
-                                          <i class="fas fa-sign-out-alt me-1"></i> Logout
-                                      </a>
+                                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userDropdown">
+                                          <li>
+                                              <a class="dropdown-item" href="../users/dashboard.php">
+                                                  <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a class="dropdown-item text-danger fw-semibold" href="code/logout.php">
+                                                  <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                              </a>
+                                          </li>
+                                      </ul>
                                   </li>
                               <?php else: ?>
                                   <li class="nav-item">
-                                      <a class="nav-link  text-light px-3 py-1 ms-2 rounded-pill" href="../admin/dashboard/login.php">
-                                          Admin Login
+                                      <a class="nav-link text-light px-3 py-1 ms-lg-2 rounded-pill d-flex align-items-center" href="../admin/dashboard/login.php">
+                                          <i class="fas fa-user-lock me-2"></i> Admin Login
                                       </a>
                                   </li>
                               <?php endif; ?>
                           </ul>
-
                       </div>
                   </div>
               </nav>

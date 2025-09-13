@@ -106,23 +106,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#testimonialsSplide', {
-    type       : 'loop',
-    perPage    : 1,
-    focus      : 'center',
-    autoplay   : true,
-    interval   : 3500,
-    pauseOnHover: true,
-    arrows     : false, // no arrows
-    pagination : false, // no dots
-    gap        : '1rem',
-    padding    : '10%',
-    breakpoints: {
-      576: { perPage: 1.1, padding: '5%' }
-    },
-  }).mount();
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    new Splide("#topMembersSplide", {
+      type: "loop",
+      perPage: 1,
+      autoplay: true,
+      interval: 3000,
+      speed: 800,
+      arrows: false,
+      pagination: true,
+    }).mount();
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Splide("#testimonialsSplide", {
+      type: "loop",
+      perPage: 2,
+      gap: "2rem",
+      autoplay: true,
+      interval: 4000,
+      speed: 800,
+      breakpoints: {
+        768: { perPage: 1 }
+      }
+    }).mount();
+  });
 </script>
 <script>
 // Counter animation

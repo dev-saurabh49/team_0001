@@ -1,4 +1,4 @@
-<?php include "./user_session.php"?>
+<?php include "./user_session.php" ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Team_0001 | User Dashboard</title>
 
+    
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+    
 
 
     <style>
@@ -355,29 +358,139 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body p-0">
-            <ul class="nav flex-column gap-2 px-2">
-                <li><a href="./dsh.php" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
-                <li><a href="./user_profile.php" class="nav-link"><i class="bi bi-person"></i> Profile</a></li>
-                <li><a href="./messages.php" class="nav-link"><i class="bi bi-chat-dots"></i> Messages</a></li>
-                <li><a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-triangle"></i> Complaint</a></li>
-                <li><a href="./polls.php" class="nav-link"><i class="bi bi-bar-chart"></i> Polls</a></li>
-                <li><a href="./settings.php" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
-                <li><a href="../../code/logout.php" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            <ul class="nav flex-column" id="sidebarMenu">
+                <li class="nav-item">
+                    <a href="../../index.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./dsh.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user_profile.php" class="nav-link">
+                        <i class="bi bi-person me-2"></i> Profile
+                    </a>
+                </li>
+
+                <!-- Polls & Meetings Dropdown -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#pollsMeetingsMenu"
+                        role="button" aria-expanded="false" aria-controls="pollsMeetingsMenu">
+                        <i class="bi bi-calendar-event me-2"></i> Polls & Meetings
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="pollsMeetingsMenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a href="./meetings.php" class="nav-link"><i class="bi bi-chat-dots me-2"></i> Meetings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./polls.php" class="nav-link"><i class="bi bi-bar-chart me-2"></i> Polls</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Tasks & Complaints Dropdown -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tasksComplaintsMenu"
+                        role="button" aria-expanded="false" aria-controls="tasksComplaintsMenu">
+                        <i class="bi bi-clipboard-data me-2"></i> Tasks & Complaints
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="tasksComplaintsMenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a href="./task.php" class="nav-link"><i class="bi bi-check-circle me-2"></i> Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-triangle me-2"></i> Complaints</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Settings & Logout -->
+                <li class="nav-item">
+                    <a href="./settings.php" class="nav-link"><i class="bi bi-gear me-2"></i> Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./logout.php" class="nav-link text-danger"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+                </li>
             </ul>
+
+
         </div>
     </div>
 
     <!-- Sidebar Desktop -->
     <div class="sidebar d-none d-lg-block">
-        <ul class="nav flex-column">
-            <li><a href="./dashboard.php" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
-            <li><a href="./user_profile.php" class="nav-link"><i class="bi bi-person"></i> Profile</a></li>
-            <li><a href="./messages.php" class="nav-link"><i class="bi bi-chat-dots"></i> Messages</a></li>
-            <li><a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-triangle"></i> Complaint</a></li>
-            <li><a href="./polls.php" class="nav-link"><i class="bi bi-bar-chart"></i> Polls</a></li>
-            <li><a href="./settings.php" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
-            <li><a href="../../code/logout.php" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-        </ul>
+       <ul class="nav flex-column" id="sidebarMenu">
+                <li class="nav-item">
+                    <a href="../../index.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./dsh.php" class="nav-link">
+                        <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./user_profile.php" class="nav-link">
+                        <i class="bi bi-person me-2"></i> Profile
+                    </a>
+                </li>
+
+                <!-- Polls & Meetings Dropdown -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#pollsMeetingsMenu"
+                        role="button" aria-expanded="false" aria-controls="pollsMeetingsMenu">
+                        <i class="bi bi-calendar-event me-2"></i> Polls & Meetings
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="pollsMeetingsMenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a href="./meetings.php" class="nav-link"><i class="bi bi-chat-dots me-2"></i> Meetings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./polls.php" class="nav-link"><i class="bi bi-bar-chart me-2"></i> Polls</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Tasks & Complaints Dropdown -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tasksComplaintsMenu"
+                        role="button" aria-expanded="false" aria-controls="tasksComplaintsMenu">
+                        <i class="bi bi-clipboard-data me-2"></i> Tasks & Complaints
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse" id="tasksComplaintsMenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a href="./task.php" class="nav-link"><i class="bi bi-check-circle me-2"></i> Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-triangle me-2"></i> Complaints</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Settings & Logout -->
+                <li class="nav-item">
+                    <a href="./settings.php" class="nav-link"><i class="bi bi-gear me-2"></i> Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./logout.php" class="nav-link text-danger"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+                </li>
+            </ul>
     </div>
 
     <!-- Header -->
@@ -408,7 +521,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="./user_profile.php"><i class="bi bi-person me-2"></i> Profile</a></li>
-                    <li><a class="dropdown-item" href="./settings.php"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                    <li><a class="dropdown-item" href="./settngs.php"><i class="bi bi-gear me-2"></i> Settings</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -418,6 +531,9 @@
         </div>
     </header>
 
+
+
     <!-- Main Content -->
     <main>
         <div class="container-fluid">
+            

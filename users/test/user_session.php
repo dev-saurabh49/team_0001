@@ -2,6 +2,12 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+// Check if user session is set
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    // Redirect to index page
+    header("Location: ../../index.php");
+    exit;
+}
 
 include __DIR__ . "/../../code/db_connection.php"; // adjust path
 
