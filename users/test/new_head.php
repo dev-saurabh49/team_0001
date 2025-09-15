@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+     <link rel="icon" href="../../images/0001.jpeg" />
     
 
 
@@ -417,6 +418,9 @@
                 </li>
 
                 <!-- Settings & Logout -->
+                <li class="nav-item">
+                    <a href="./public_msgs.php" class="nav-link"><i class="bi bi-gear me-2"></i> Public Messages</a>
+                </li>
                 <li class="nav-item">
                     <a href="./settings.php" class="nav-link"><i class="bi bi-gear me-2"></i> Settings</a>
                 </li>

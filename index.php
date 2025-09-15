@@ -1,9 +1,7 @@
 <!-- NOw listen generate a prompt for designning user_dashboard.php based on admin menus main theme #d4af37 and background: linear-gradient(135deg, #0d1b2a, #1b263b); and focus on generating a premium ui where user can see all things comes from admin using side bar or something else -->
 
 <?php include 'code/header.php'; ?>
-<!--Ends here  -->
-<!-- modal login -->
-<!-- Login Modal -->
+
 <!-- Login Modal -->
 <div
   class="modal fade"
@@ -110,7 +108,7 @@
     </div>
   </div>
 </div>
-
+<!--Ends here  -->
 <!-- Forgot Password Modal -->
 <div
   class="modal fade"
@@ -179,9 +177,9 @@
     </div>
   </div>
 </div>
+<!-- Forgot Password Modal End-->
 
 
-<!-- end modal -->
 
 <!-- Hero Section -->
 <section
@@ -321,6 +319,31 @@
           </div>
         </div>
 
+        <!-- otp modal  -->
+        <!-- OTP Modal -->
+        <div class="modal fade" id="otpModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light rounded-4">
+              <div class="modal-header border-0">
+                <h5 class="modal-title text-warning fw-bold">Verify OTP</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form id="otpForm">
+                  <div class="mb-3">
+                    <label class="form-label">Enter OTP</label>
+                    <input type="text" name="otp" class="form-control bg-secondary text-light border-0" required>
+                  </div>
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-warning fw-bold rounded-pill">Verify</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end otp modal -->
+
 
       </div>
 
@@ -377,6 +400,8 @@
     </div>
   </div>
 </section>
+<!-- Hero Section End-->
+
 
 <!-- About Section -->
 <section
@@ -479,11 +504,9 @@
     });
   </script>
 </section>
+<!-- About Section End-->
 
-
-
-
-
+<!-- Founders Section -->
 <section
   id="founders"
   class="py-5"
@@ -546,6 +569,7 @@
     </div>
   </div>
 </section>
+<!-- Founders Section Ends-->
 
 
 <!-- Bootstrap Modal for Lightbox -->
@@ -570,8 +594,9 @@
     </div>
   </div>
 </div>
+<!-- Bootstrap Modal for Lightbox Ends-->
 
-
+<!-- Top members section start -->
 <section id="top-members" class="py-5" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: #fff;">
   <div class="container">
     <!-- Section Title -->
@@ -644,7 +669,7 @@
     </div>
   </div>
 </section>
-
+<!-- Top members section End -->
 
 <!-- Hover Animation -->
 <style>
@@ -702,63 +727,7 @@
 
 
 
-<!-- Callback Modal -->
-<div
-  class="modal fade"
-  id="callbackModal"
-  tabindex="-1"
-  aria-labelledby="callbackModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
-      <div class="modal-header border-0">
-        <h5
-          class="modal-title text-warning fw-bold"
-          id="callbackModalLabel">
-          Request a Call Back
-        </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="callbackForm">
-          <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input
-              type="text"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Name"
-              required />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Phone Number</label>
-            <input
-              type="tel"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Phone Number"
-              required />
-          </div>
-          <div class="d-grid">
-            <button
-              type="submit"
-              class="btn btn-warning fw-bold rounded-pill py-2">
-              <i class="fas fa-paper-plane me-2"></i> Submit
-            </button>
-          </div>
-        </form>
-        <div
-          id="callbackSuccess"
-          class="alert alert-success mt-3 d-none"
-          role="alert">
-          ✅ Your request has been submitted!
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- Testimonials Section -->
 <section id="testimonials" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
   <div class="container">
@@ -826,6 +795,7 @@
     </div>
   </div>
 </section>
+<!-- Testimonials section start -->
 
 <!-- Premium Styling -->
 <style>
@@ -862,7 +832,6 @@
   }
 </style>
 
-<!-- fun facyts -->
 <!-- Stats / Fun Facts Section -->
 <section id="stats" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
   <div class="container">
@@ -1052,7 +1021,65 @@
   </div>
 </section>
 
+<!-- Callback Modal -->
+<div
+  class="modal fade"
+  id="callbackModal"
+  tabindex="-1"
+  aria-labelledby="callbackModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
+      <div class="modal-header border-0">
+        <h5
+          class="modal-title text-warning fw-bold"
+          id="callbackModalLabel">
+          Request a Call Back
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="callbackForm">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Your Name"
+              required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
+              placeholder="Your Phone Number"
+              required />
+          </div>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-warning fw-bold rounded-pill py-2">
+              <i class="fas fa-paper-plane me-2"></i> Submit
+            </button>
+          </div>
+        </form>
+        <div
+          id="callbackSuccess"
+          class="alert alert-success mt-3 d-none"
+          role="alert">
+          ✅ Your request has been submitted!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- contact section -->
 <section
   id="contact"
   style="
@@ -1080,11 +1107,20 @@
       class="row justify-content-center align-items-start flex-column-reverse flex-lg-row">
       <!-- Contact Form -->
       <div class="col-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-        <form id="contactForm" class="p-4 bg-dark rounded-4 shadow-lg">
+        <?php if (isset($_SESSION['alert'])): ?>
+          <div class="alert alert-<?php echo $_SESSION['alert']['type']; ?> alert-dismissible fade show" role="alert">
+            <?php echo $_SESSION['alert']['msg']; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php unset($_SESSION['alert']); ?>
+        <?php endif; ?>
+
+        <form id="contactForm" method="post" action="code/contact_code.php" class="p-4 bg-dark rounded-4 shadow-lg">
           <div class="mb-3">
             <label class="form-label text-light">Name</label>
             <input
               type="text"
+              name="c_name"
               class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
               placeholder="Your Name"
               required />
@@ -1094,6 +1130,7 @@
             <label class="form-label text-light">Email</label>
             <input
               type="email"
+              name="c_email"
               class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
               placeholder="Your Email"
               required />
@@ -1104,6 +1141,7 @@
             <textarea
               class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3 w-100"
               rows="5"
+              name="c_msg"
               placeholder="Your Message"
               required></textarea>
           </div>
@@ -1111,6 +1149,7 @@
           <div class="d-grid">
             <button
               type="submit"
+              name="c_btn"
               class="btn btn-warning fw-bold rounded-pill py-2">
               Send Message
             </button>

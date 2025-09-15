@@ -13,6 +13,7 @@
 
               <head>
                   <title>Maintenance Mode - Team 0001</title>
+                  <link rel="icon" href="../images/0001.jpeg" />
                   <meta name="viewport" content="width=device-width, initial-scale=1" />
                   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
                   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -155,6 +156,7 @@
               <!-- AOS CSS -->
               <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+               <link rel="icon" href="../images/0001.jpeg" />
               <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
 
               <link

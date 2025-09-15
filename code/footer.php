@@ -64,7 +64,7 @@
     setTimeout(() => {
       loader.classList.add('fade-out');
       setTimeout(() => loader.style.display = 'none', 600);
-    }, 2500); // 4 seconds
+    }, 1500); // 4 seconds
   });
 </script>
 
