@@ -67,12 +67,70 @@
     }, 1500); // 4 seconds
   });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- Swiper Init -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      }, // mobile
+      992: {
+        slidesPerView: 3
+      } // desktop
+    }
+  });
+</script>
+
+<script>
+  var blogSwiper = new Swiper(".blogSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
 
 <script>
   const togglePassword = document.getElementById("togglePassword");
   const passwordInput = document.getElementById("password");
-  togglePassword.addEventListener("click", function () {
+  togglePassword.addEventListener("click", function() {
     const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
     passwordInput.setAttribute("type", type);
     this.querySelector("i").classList.toggle("fa-eye-slash");
@@ -98,26 +156,30 @@
   });
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#topMembersSplide', {
-    type       : 'loop',
-    perPage    : 1,
-    focus      : 'center',
-    autoplay   : true,
-    interval   : 2500,
-    pauseOnHover: false,
-    arrows     : false,   // remove arrows
-    pagination : false,   // remove dots
-    padding    : '15%',
-    gap        : '1rem',
-    breakpoints: {
-      576: { perPage: 1.1, padding: '5%', gap: '0.5rem' },
-    },
-  }).mount();
-});
+  document.addEventListener('DOMContentLoaded', function() {
+    new Splide('#topMembersSplide', {
+      type: 'loop',
+      perPage: 1,
+      focus: 'center',
+      autoplay: true,
+      interval: 2500,
+      pauseOnHover: false,
+      arrows: false, // remove arrows
+      pagination: false, // remove dots
+      padding: '15%',
+      gap: '1rem',
+      breakpoints: {
+        576: {
+          perPage: 1.1,
+          padding: '5%',
+          gap: '0.5rem'
+        },
+      },
+    }).mount();
+  });
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     new Splide("#topMembersSplide", {
       type: "loop",
       perPage: 1,
@@ -130,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     new Splide("#testimonialsSplide", {
       type: "loop",
       perPage: 2,
@@ -139,92 +201,86 @@ document.addEventListener('DOMContentLoaded', function () {
       interval: 4000,
       speed: 800,
       breakpoints: {
-        768: { perPage: 1 }
+        768: {
+          perPage: 1
+        }
       }
     }).mount();
   });
 </script>
 <script>
-// Counter animation
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const speed = 50; // lower = faster
-    const increment = target / speed;
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 50; // lower = faster
+      const increment = target / speed;
 
-    if (count < target) {
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCount, 30);
-    } else {
-      counter.innerText = target;
-    }
-  };
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target;
+      }
+    };
 
-  // Trigger when visible (simple approach with IntersectionObserver)
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        updateCount();
-        observer.unobserve(counter);
+    // Trigger when visible (simple approach with IntersectionObserver)
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(counter);
+  });
+</script>
+<script>
+  const stars = document.querySelectorAll('.star-rating .star');
+  const ratingValue = document.getElementById("ratingValue");
+
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      stars.forEach(s => s.classList.remove('hover'));
+      for (let i = 0; i < star.dataset.value; i++) {
+        stars[i].classList.add('hover');
       }
     });
-  }, { threshold: 0.5 });
 
-  observer.observe(counter);
-});
+    star.addEventListener('mouseout', () => {
+      stars.forEach(s => s.classList.remove('hover'));
+    });
+
+    star.addEventListener('click', () => {
+      const selectedRating = star.dataset.value;
+      ratingValue.value = selectedRating;
+
+      stars.forEach(s => s.classList.remove('selected'));
+      for (let i = 0; i < selectedRating; i++) {
+        stars[i].classList.add('selected');
+      }
+    });
+  });
 </script>
 
-<script>
-const stars = document.querySelectorAll('.star-rating .star');
-let selectedRating = 0;
-
-stars.forEach(star => {
-  star.addEventListener('mouseover', () => {
-    stars.forEach(s => s.classList.remove('hover'));
-    for (let i = 0; i < star.dataset.value; i++) {
-      stars[i].classList.add('hover');
-    }
-  });
-
-  star.addEventListener('mouseout', () => {
-    stars.forEach(s => s.classList.remove('hover'));
-  });
-
-  star.addEventListener('click', () => {
-    selectedRating = star.dataset.value;
-    stars.forEach(s => s.classList.remove('selected'));
-    for (let i = 0; i < selectedRating; i++) {
-      stars[i].classList.add('selected');
-    }
-  });
-});
-
-// Handle submit
-document.getElementById('submitRating').addEventListener('click', () => {
-  const comment = document.getElementById('ratingComment').value.trim();
-  if (selectedRating === 0) {
-    alert("Please select a star rating!");
-    return;
-  }
-
-});
-</script>
 
 
 
 <!-- aos -->
- <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
 <script>
-AOS.init({
-  duration: 1000,
-  easing: 'ease-in-out',
-  once: true,
-  offset: 50, // smaller offset triggers animation sooner
-});
-
-
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 50, // smaller offset triggers animation sooner
+  });
 </script>
 
 <script src="./script.js"></script>

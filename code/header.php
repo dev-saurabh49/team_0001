@@ -156,7 +156,7 @@
               <!-- AOS CSS -->
               <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
-               <link rel="icon" href="../images/0001.jpeg" />
+              <link rel="icon" href="../images/team00001 (1).png" />
               <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
 
               <link
@@ -180,13 +180,13 @@
 
           <body>
               <!-- Premium Loader -->
-              <div id="premiumLoader">
+              <!-- <div id="premiumLoader">
                   <div class="loader-content">
                       <img src="./images/0001.jpeg" alt="Team 0001 Logo" class="loader-logo">
                       <div class="loader-spinner"></div>
                       <h2 class="loader-text">Team 0001</h2>
                   </div>
-              </div>
+              </div> -->
 
               <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background: #0d1b2a;">
                   <div class="container">

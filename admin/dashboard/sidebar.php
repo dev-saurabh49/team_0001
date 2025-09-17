@@ -9,7 +9,7 @@
     <h3 class="mb-4 text-primary fw-bold">Team 0001</h3>
     <ul class="nav nav-pills flex-column">
         <li><a href="./d.php" class="nav-link active"><i class="bi bi-grid"></i> Dashboard</a></li>
-        <li><a href="teams.php" class="nav-link"><i class="bi bi-people"></i> Teams</a></li>
+        <li><a href="" class="nav-link"><i class="bi bi-people"></i> Founders</a></li>
         <li><a href="members.php" class="nav-link"><i class="bi bi-person-badge"></i> Members</a></li>
         <li><a href="tasks.php" class="nav-link"><i class="bi bi-check2-square"></i> Tasks</a></li>
         <li><a href="reports.php" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Reports</a></li>

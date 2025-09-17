@@ -1,15 +1,12 @@
 <?php include './code/header.php'; ?>
 
-
 <body>
 
     <!-- Hero Section -->
     <section id="testimonials-hero" class="text-center" style="background: linear-gradient(135deg, #0d1b2a, #1b263b); padding: 100px 0; color: #fff;">
         <div class="container" data-aos="fade-up">
             <h2 class="fw-bold text-warning display-5">Our <span class="text-light gallery_span">Testimonials</span></h2>
-            <p class="lead mt-3 px-3 px-md-5">
-                Hear from our members and collaborators who have been part of Team 0001’s journey.
-            </p>
+            <p class="lead mt-3 px-3 px-md-5"> Hear from our members and collaborators who have been part of Team 0001’s journey. </p>
         </div>
     </section>
 
@@ -18,90 +15,43 @@
         <div class="container">
             <div class="row g-4">
 
-                <!-- Testimonial 1 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="images/member1.jpg" class="rounded-circle me-3 shadow-sm" style="width:60px; height:60px; object-fit:cover;">
-                            <div>
-                                <h6 class="text-warning fw-bold mb-0">Rishabh Shukla</h6>
-                                <small class="text-light">Lead Strategist</small>
-                            </div>
-                        </div>
-                        <p class="fst-italic">
-                            "Being part of Team 0001 has been transformative. The camaraderie and shared vision make every project exciting and meaningful."
-                        </p>
-                    </div>
-                </div>
+                <?php
+                include "code/db_connection.php";
 
-                <!-- Testimonial 2 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="images/member2.jpg" class="rounded-circle me-3 shadow-sm" style="width:60px; height:60px; object-fit:cover;">
-                            <div>
-                                <h6 class="text-warning fw-bold mb-0">Saurabh Pandey</h6>
-                                <small class="text-light">Co-Organizer</small>
-                            </div>
-                        </div>
-                        <p class="fst-italic">
-                            "Team 0001 is a family. Every initiative is backed by trust, discipline, and mutual respect. A perfect place for growth."
-                        </p>
-                    </div>
-                </div>
+                // Fetch all testimonials dynamically
+                $sql = "SELECT * FROM team_feedback ORDER BY created_at DESC LIMIT 20";
+                $result = $conn->query($sql);
 
-                <!-- Testimonial 3 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="images/member3.jpg" class="rounded-circle me-3 shadow-sm" style="width:60px; height:60px; object-fit:cover;">
-                            <div>
-                                <h6 class="text-warning fw-bold mb-0">Ananya Sharma</h6>
-                                <small class="text-light">Event Coordinator</small>
-                            </div>
-                        </div>
-                        <p class="fst-italic">
-                            "The experience of working in Team 0001 is unmatched. Collaboration, learning, and innovation are at the heart of everything we do."
-                        </p>
-                    </div>
-                </div>
+                while ($row = $result->fetch_assoc()):
+                    $rating = (int)$row['rating'];
+                ?>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                        <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100 text-center">
+                            <!-- Profile Image Centered -->
+                            <img src="code/<?= htmlspecialchars($row['profile_photo']); ?>"
+                                class="rounded-circle mb-3 shadow-sm mx-auto"
+                                style="width:80px; height:80px; object-fit:cover; border: 2px solid #FFD700;">
 
-                <!-- Testimonial 4 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="images/member4.jpg" class="rounded-circle me-3 shadow-sm" style="width:60px; height:60px; object-fit:cover;">
-                            <div>
-                                <h6 class="text-warning fw-bold mb-0">Rahul Mehta</h6>
-                                <small class="text-light">Volunteer</small>
-                            </div>
-                        </div>
-                        <p class="fst-italic">
-                            "Joining Team 0001 opened doors to new opportunities and connections. The energy and discipline here are incredible."
-                        </p>
-                    </div>
-                </div>
+                            <!-- Name and Role / Comment -->
+                            <h6 class="text-warning fw-bold mb-1"><?= htmlspecialchars($row['name']); ?></h6>
 
-                <!-- Testimonial 5 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-4 h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="images/member5.jpg" class="rounded-circle me-3 shadow-sm" style="width:60px; height:60px; object-fit:cover;">
-                            <div>
-                                <h6 class="text-warning fw-bold mb-0">Priya Singh</h6>
-                                <small class="text-light">Community Lead</small>
+                            <!-- User Comment -->
+                            <p class="fst-italic mt-2">
+                                "<?= htmlspecialchars($row['comment']); ?>"
+                            </p>
+
+                            <!-- Star Rating -->
+                            <div class="text-warning mt-2">
+                                <?php for ($i = 1; $i <= 5; $i++) echo $i <= $rating ? '★' : '☆'; ?>
                             </div>
                         </div>
-                        <p class="fst-italic">
-                            "Team 0001 is about teamwork and trust. Every experience here helps you grow professionally and personally."
-                        </p>
+
                     </div>
-                </div>
+                <?php endwhile;
+                $conn->close();
+                ?>
 
             </div>
-            <!-- Bootstrap Pagination -->
-           
-
         </div>
     </section>
 
@@ -117,4 +67,3 @@
             offset: 50,
         });
     </script>
-    

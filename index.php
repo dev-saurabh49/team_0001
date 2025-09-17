@@ -1,6 +1,7 @@
 <!-- NOw listen generate a prompt for designning user_dashboard.php based on admin menus main theme #d4af37 and background: linear-gradient(135deg, #0d1b2a, #1b263b); and focus on generating a premium ui where user can see all things comes from admin using side bar or something else -->
 
-<?php include 'code/header.php'; ?>
+<?php include 'code/header.php';
+?>
 
 <!-- Login Modal -->
 <div
@@ -506,70 +507,7 @@
 </section>
 <!-- About Section End-->
 
-<!-- Founders Section -->
-<section
-  id="founders"
-  class="py-5"
-  style="
-        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
-        color: #fff;
-      ">
-  <div class="container text-center">
-    <h2 class="fw-bold text-warning mb-4" data-aos="fade-down">
-      Meet Our <span class="gallery_span text-light">Founders</span>
-    </h2>
-    <p class="mb-5 text-light px-2 px-lg-5" data-aos="fade-up" data-aos-delay="100">
-      Team 0001 की नींव कुछ खास लोगों ने रखी है। उनका vision, brotherhood और
-      dedication ही आज हमें यहां तक लाया है।
-    </p>
-
-    <div class="row g-4">
-      <!-- Founder 1 -->
-      <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card founder-card h-100 shadow-lg border-0 text-center p-4">
-          <img
-            src="images/rishabh_1.jpg"
-            alt="Founder 1"
-            class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
-            style="width: 130px; height: 130px; object-fit: cover" />
-          <h5 class="fw-bold text-warning">
-            <a
-              href="https://rishabhshukla9580.netlify.app/"
-              class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla
-          </h5>
-          <p class="text-light small">Founder & Leader</p>
-          <blockquote class="fst-italic text-light small">
-            "Discipline and Unity is our real strength."
-          </blockquote>
-        </div>
-      </div>
-
-      <!-- Founder 2 -->
-
-
-      <!-- Founder 3 -->
-      <div class="col-12 col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="card founder-card h-100 shadow-lg border-0 text-center p-4">
-          <img
-            src="images/rishabh_1.jpg"
-            alt="Founder 3"
-            class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning"
-            style="width: 130px; height: 130px; object-fit: cover" />
-          <h5 class="fw-bold text-warning">
-            <a
-              href="https://rishabhshukla9580.netlify.app/"
-              class="text-light gallery_span text-decoration-none">Rishabh </a>Shukla
-          </h5>
-          <p class="text-light small">Founder & Leader</p>
-          <blockquote class="fst-italic text-light small">
-            "Discipline and Unity is our real strength."
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Founders Section Ends-->
+<?php include "./founders.php" ?>
 
 
 <!-- Bootstrap Modal for Lightbox -->
@@ -596,82 +534,7 @@
 </div>
 <!-- Bootstrap Modal for Lightbox Ends-->
 
-<!-- Top members section start -->
-<section id="top-members" class="py-5" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: #fff;">
-  <div class="container">
-    <!-- Section Title -->
-    <div class="row mb-5 text-center">
-      <div class="col">
-        <h2 class="display-5 fw-bold text-warning mb-3">
-          Our <span class="text-light gallery_span">Top Members</span>
-        </h2>
-        <p class="lead text-light px-2 px-lg-5">
-          Meet the dedicated members who make Team 0001 special.
-        </p>
-      </div>
-    </div>
-
-    <!-- Desktop Grid -->
-    <div class="row d-none d-lg-flex g-4 justify-content-center">
-      <div class="col-12 col-md-4">
-        <div class="card member-card h-100 text-center p-4" data-aos="fade-up">
-          <img src="images/member1.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-          <h5 class="fw-bold text-warning">Rishabh Shukla</h5>
-          <p class="text-light small">Lead Strategist</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card member-card h-100 text-center p-4" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/member2.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-          <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
-          <p class="text-light small">Co-Organizer</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="card member-card h-100 text-center p-4" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/member3.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-          <h5 class="fw-bold text-warning">Ananya Sharma</h5>
-          <p class="text-light small">Event Coordinator</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Slider -->
-    <div class="splide d-lg-none" id="topMembersSplide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <!-- Slide 1 -->
-          <li class="splide__slide">
-            <div class="card member-card h-100 text-center p-4">
-              <img src="images/member1.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-              <h5 class="fw-bold text-warning">Rishabh Shukla</h5>
-              <p class="text-light small">Lead Strategist</p>
-            </div>
-          </li>
-          <!-- Slide 2 -->
-          <li class="splide__slide">
-            <div class="card member-card h-100 text-center p-4">
-              <img src="images/member2.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-              <h5 class="fw-bold text-warning">Saurabh Pandey</h5>
-              <p class="text-light small">Co-Organizer</p>
-            </div>
-          </li>
-          <!-- Slide 3 -->
-          <li class="splide__slide">
-            <div class="card member-card h-100 text-center p-4">
-              <img src="images/member3.jpg" class="rounded-circle mx-auto mb-3 shadow-lg border border-3 border-warning" style="width:120px;height:120px;object-fit:cover;" />
-              <h5 class="fw-bold text-warning">Ananya Sharma</h5>
-              <p class="text-light small">Event Coordinator</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Top members section End -->
-
-<!-- Hover Animation -->
+<?php include "./top_members.php"; ?>
 <style>
   .member-card {
     background: rgba(17, 17, 17, 0.85);
@@ -691,7 +554,7 @@
   }
 
   .member-card:hover img {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     border-color: #ffcc00;
   }
 
@@ -722,83 +585,116 @@
     }
   }
 </style>
+<!-- Top members section End -->
 
-<!-- end-top -->
-
-
-
-
-<!-- Testimonials Section -->
-<section id="testimonials" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
-  <div class="container">
+<section id="testimonials" class="py-20" style="background: linear-gradient(135deg, #0d1b2a, #1b263b);">
+  <div class="container mx-auto px-4 py-2">
     <!-- Section Title -->
-    <div class="row mb-5 text-center">
-      <div class="col">
-        <h2 class="display-5 fw-bold text-warning mb-3">
-          What People Say <span class="text-light gallery_span">About Us</span>
-        </h2>
-        <p class="lead text-light px-2 px-lg-5">
-          Feedback from our community and partners who trust Team 0001.
-        </p>
-      </div>
+    <div class="text-center mb-12">
+      <h2 class="display-5 fw-bold text-warning mb-3 ">
+        What People Say <span class="text-light gallery_span">About Us</span>
+      </h2>
+      <p class="lead text-light px-2 lg:px-32">
+        Feedback from our community and partners who trust Team 0001.
+      </p>
     </div>
 
-    <!-- Testimonials Carousel -->
-    <div class="splide" id="testimonialsSplide">
-      <div class="splide__track">
-        <ul class="splide__list">
+    <!-- Swiper Carousel -->
+    <div class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        <?php
+        include "code/db_connection.php";
+        $sql = "SELECT * FROM team_feedback ORDER BY created_at DESC LIMIT 4"; // 4 testimonials only
+        $result = $conn->query($sql);
 
-          <!-- Testimonial 1 -->
-          <li class="splide__slide">
-            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up">
-              <div class="text-center">
-                <img src="images/member1.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
-                <p class="text-light fst-italic">
-                  "Team 0001 is the most dedicated and organized team I have worked with. Their discipline and unity are unmatched!"
-                </p>
-                <h6 class="fw-bold text-warning mb-0">Rishabh Sharma</h6>
-                <small class="text-light">Community Partner</small>
+        while ($row = $result->fetch_assoc()):
+          $rating = (int)$row['rating'];
+        ?>
+          <div class="swiper-slide mb-4">
+            <div class="testimonial-card p-6 shadow-lg border-0 rounded-4 text-center bg-dark text-light">
+              <img src="code/<?= htmlspecialchars($row['profile_photo']); ?>"
+                class="rounded-circle mb-3 shadow-lg border-3 border-warning mx-auto"
+                style="width:80px;height:80px;object-fit:cover;">
+              <p class="fst-italic mb-2 text-white">
+                "<?= htmlspecialchars($row['comment']); ?>"
+              </p>
+              <h6 class="fw-bold text-warning mb-0"><?= htmlspecialchars($row['name']); ?></h6>
+              <div class="text-warning mt-2">
+                <?php for ($i = 1; $i <= 5; $i++) echo $i <= $rating ? '★' : '☆'; ?>
               </div>
             </div>
-          </li>
-
-          <!-- Testimonial 2 -->
-          <li class="splide__slide">
-            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="100">
-              <div class="text-center">
-                <img src="images/member2.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
-                <p class="text-light fst-italic">
-                  "Amazing team with a strong vision. Their events always leave a positive impact on the community."
-                </p>
-                <h6 class="fw-bold text-warning mb-0">Saurabh Pandey</h6>
-                <small class="text-light">Event Attendee</small>
-              </div>
-            </div>
-          </li>
-
-          <!-- Testimonial 3 -->
-          <li class="splide__slide">
-            <div class="testimonial-card p-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="200">
-              <div class="text-center">
-                <img src="images/member3.jpg" class="rounded-circle mb-3 shadow-lg border border-3 border-warning" style="width:80px;height:80px;object-fit:cover;">
-                <p class="text-light fst-italic">
-                  "Joining Team 0001 was the best decision! The team spirit is incredible and they inspire everyone around them."
-                </p>
-                <h6 class="fw-bold text-warning mb-0">Ananya Sharma</h6>
-                <small class="text-light">Team Member</small>
-              </div>
-            </div>
-          </li>
-
-        </ul>
+          </div>
+        <?php endwhile;
+        $conn->close();
+        ?>
       </div>
+
+      <!-- Navigation Arrows -->
+      <div class="swiper-button-next text-warning"></div>
+      <div class="swiper-button-prev text-warning"></div>
+
+      <!-- View More Button -->
+      <div class="text-center mt-8">
+        <a href="testimonials.php" class="custom-view-more-btn">
+          View More
+        </a>
+      </div>
+
+
     </div>
   </div>
 </section>
-<!-- Testimonials section start -->
 
-<!-- Premium Styling -->
+<script>
+  const testimonialSwiper = new Swiper('.testimonial-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 30,
+    slidesPerView: 1, // mobile
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }, // tablets
+      1024: {
+        slidesPerView: 4
+      } // desktop, show all 4
+    }
+  });
+</script>
+
+
 <style>
+  .custom-view-more-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    border-radius: 9999px;
+    color: #ffc107;
+    background: rgba(13, 71, 161, 0.4);
+    box-shadow: 0 4px 14px rgba(13, 71, 161, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .custom-view-more-btn:hover {
+    color: #fff;
+    background: #ffc107;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(13, 71, 161, 0.35);
+  }
+
   .testimonial-card {
     background: rgba(17, 17, 17, 0.85);
     border-radius: 20px;
@@ -940,6 +836,89 @@
   </div>
 </section>
 
+<section id="blog" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="row mb-5 text-center">
+      <div class="col">
+        <h2 class="display-5 fw-bold text-warning mb-3">
+          Latest <span class="text-light gallery_span">Updates</span>
+        </h2>
+        <p class="lead text-light px-2 px-lg-5">
+          Stay connected with Team 0001 through our latest news, announcements, and articles.
+        </p>
+      </div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper blogSwiper">
+      <div class="swiper-wrapper">
+        <!-- Blog 1 -->
+        <div class="swiper-slide">
+          <div class="p-4 rounded-4 shadow-lg bg-dark blog-card">
+            <div class="overflow-hidden rounded-3 mb-3">
+              <img src="./images/team00001 (1).png" class="img-fluid rounded-3 blog-img" alt="Blog 1">
+            </div>
+            <h5 class="fw-bold text-warning">Team 0001 Wins Hackathon</h5>
+            <p class="text-light small flex-grow-1">
+              Our members showcased their innovation and teamwork at the recent hackathon and bagged the top prize.
+            </p>
+            <a href="#" class="text-warning small fw-bold mt-2">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="p-4 rounded-4 shadow-lg bg-dark blog-card">
+            <div class="overflow-hidden rounded-3 mb-3">
+              <img src="./images/team00001 (1).png" class="img-fluid rounded-3 blog-img" alt="Blog 1">
+            </div>
+            <h5 class="fw-bold text-warning">Team 0001 Wins Hackathon</h5>
+            <p class="text-light small flex-grow-1">
+              Our members showcased their innovation and teamwork at the recent hackathon and bagged the top prize.
+            </p>
+            <a href="#" class="text-warning small fw-bold mt-2">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+        <!-- Blog 2 -->
+        <div class="swiper-slide">
+          <div class="p-4 rounded-4 shadow-lg bg-dark blog-card">
+            <div class="overflow-hidden rounded-3 mb-3">
+              <img src="./images/team00001 (1).png" class="img-fluid rounded-3 blog-img" alt="Blog 1">
+            </div>
+            <h5 class="fw-bold text-warning">Team 0001 Wins Hackathon</h5>
+            <p class="text-light small flex-grow-1">
+              Our members showcased their innovation and teamwork at the recent hackathon and bagged the top prize.
+            </p>
+            <a href="#" class="text-warning small fw-bold mt-2">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="swiper-slide">
+          <div class="p-4 rounded-4 shadow-lg bg-dark blog-card">
+            <div class="overflow-hidden rounded-3 mb-3">
+              <img src="./images/team00001 (1).png" class="img-fluid rounded-3 blog-img" alt="Blog 1">
+            </div>
+            <h5 class="fw-bold text-warning">Team 0001 Wins Hackathon</h5>
+            <p class="text-light small flex-grow-1">
+              Our members showcased their innovation and teamwork at the recent hackathon and bagged the top prize.
+            </p>
+            <a href="#" class="text-warning small fw-bold mt-2">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation -->
+      <div class="swiper-button-next text-warning"></div>
+      <div class="swiper-button-prev text-warning"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- FAQ Section -->
 <section id="faq" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;" class="text-light">
@@ -1021,7 +1000,7 @@
   </div>
 </section>
 
-<!-- Callback Modal -->
+<!-- call back modal -->
 <div
   class="modal fade"
   id="callbackModal"
@@ -1031,53 +1010,65 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
       <div class="modal-header border-0">
-        <h5
-          class="modal-title text-warning fw-bold"
-          id="callbackModalLabel">
+        <h5 class="modal-title text-warning fw-bold" id="callbackModalLabel">
           Request a Call Back
         </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="callbackForm">
           <div class="mb-3">
             <label class="form-label">Name</label>
-            <input
-              type="text"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Name"
-              required />
+            <input type="text" name="name" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Your Name" required />
           </div>
           <div class="mb-3">
             <label class="form-label">Phone Number</label>
-            <input
-              type="tel"
-              class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3"
-              placeholder="Your Phone Number"
-              required />
+            <input type="tel" name="phone" class="form-control bg-secondary text-light border-0 rounded-3 py-2 px-3" placeholder="Your Phone Number" required />
           </div>
           <div class="d-grid">
-            <button
-              type="submit"
-              class="btn btn-warning fw-bold rounded-pill py-2">
+            <button type="submit" name="call_btn" class="btn btn-warning fw-bold rounded-pill py-2">
               <i class="fas fa-paper-plane me-2"></i> Submit
             </button>
           </div>
         </form>
-        <div
-          id="callbackSuccess"
-          class="alert alert-success mt-3 d-none"
-          role="alert">
-          ✅ Your request has been submitted!
-        </div>
+
+        <!-- Success / Error message -->
+        <div id="callbackMessage" class="alert mt-3 d-none" role="alert"></div>
       </div>
     </div>
   </div>
 </div>
+<script>
+  document.getElementById('callbackForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    let formData = new FormData(this);
+    let messageDiv = document.getElementById('callbackMessage');
+
+    fetch('code/callback.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        messageDiv.classList.remove('d-none', 'alert-success', 'alert-danger', 'alert-warning');
+        if (data.status === 'success') {
+          messageDiv.classList.add('alert', 'alert-success');
+          this.reset(); // reset form
+        } else {
+          messageDiv.classList.add('alert', 'alert-warning');
+        }
+        messageDiv.innerHTML = data.message;
+      })
+      .catch(err => {
+        messageDiv.classList.remove('d-none');
+        messageDiv.classList.add('alert', 'alert-danger');
+        messageDiv.innerHTML = 'Something went wrong. Please try again.';
+        console.error(err);
+      });
+  });
+</script>
+
 
 <!-- contact section -->
 <section
@@ -1205,7 +1196,6 @@
   </div>
 </section>
 
-<!-- Rate Us Section -->
 <section id="rate-us" class="text-light" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); padding:80px 0;">
   <div class="container">
     <div class="row mb-5 text-center">
@@ -1219,41 +1209,55 @@
       </div>
     </div>
 
-    <div class="row g-4 justify-content-center align-items-start">
-      <!-- Left Side: User Info Form -->
-      <div class="col-12 col-md-6" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8" data-aos="fade-up">
         <div class="card bg-dark text-light shadow-lg border-warning rounded-4 p-4">
-          <h5 class="text-warning fw-bold mb-4 text-center">Your Details</h5>
-          <form id="userForm" enctype="multipart/form-data">
+          <h5 class="text-warning fw-bold mb-4 text-center">Give Your Feedback</h5>
+
+          <!-- Single Unified Form -->
+          <form id="ratingForm" action="code/save_rating.php" method="POST" enctype="multipart/form-data">
+            <!-- Name -->
             <div class="mb-3">
               <label for="userName" class="form-label fw-bold">Name</label>
-              <input type="text" class="form-control bg-secondary text-light border-warning" id="userName" placeholder="Your Name" required>
+              <input type="text" class="form-control bg-secondary text-light border-warning" id="userName" name="name" placeholder="Your Name" required>
             </div>
+
+            <!-- Email -->
             <div class="mb-3">
               <label for="userEmail" class="form-label fw-bold">Email</label>
-              <input type="email" class="form-control bg-secondary text-light border-warning" id="userEmail" placeholder="Your Email" required>
+              <input type="email" class="form-control bg-secondary text-light border-warning" id="userEmail" name="email" placeholder="Your Email" required>
             </div>
+
+            <!-- Profile Photo -->
             <div class="mb-3">
               <label for="userProfile" class="form-label fw-bold">Profile Photo</label>
-              <input type="file" class="form-control bg-secondary text-light border-warning" id="userProfile" accept="image/*">
+              <input type="file" class="form-control bg-secondary text-light border-warning" id="userProfile" name="profile" accept="image/*">
             </div>
-          </form>
-        </div>
-      </div>
 
-      <!-- Right Side: Stars & Comment -->
-      <div class="col-12 col-md-6" data-aos="fade-up">
-        <div class="card bg-dark text-light shadow-lg border-warning rounded-4 p-4">
-          <h5 class="text-warning fw-bold mb-4 text-center">Your Rating</h5>
-          <div class="star-rating mb-3 text-center">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-          </div>
-          <textarea id="ratingComment" class="form-control bg-secondary text-light border-warning rounded-3 py-2 px-3 mb-3" rows="4" placeholder="Leave your comments here..."></textarea>
-          <button id="submitRating" class="btn btn-warning fw-bold w-100 rounded-pill">Submit Rating</button>
+            <!-- Star Rating -->
+            <div class="mb-3 text-center">
+              <label class="form-label fw-bold d-block">Your Rating</label>
+              <div class="star-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <input type="hidden" id="ratingValue" name="rating" required>
+            </div>
+
+            <!-- Comment -->
+            <div class="mb-3">
+              <label for="ratingComment" class="form-label fw-bold">Your Comments</label>
+              <textarea id="ratingComment" name="comment" class="form-control bg-secondary text-light border-warning rounded-3 py-2 px-3" rows="4" placeholder="Leave your comments here..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submitRating" class="btn btn-warning fw-bold w-100 rounded-pill">Submit Rating</button>
+          </form>
+
+
         </div>
       </div>
     </div>
