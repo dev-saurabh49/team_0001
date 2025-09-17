@@ -18,6 +18,58 @@ if ($result && $result->num_rows > 0) {
 }
 ?>
 
+<style>
+    .member-card {
+        background: rgba(17, 17, 17, 0.85);
+        border-radius: 20px;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        border: none;
+    }
+
+    .member-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 193, 7, 0.45);
+    }
+
+    .member-card img {
+        transition: all 0.4s ease;
+    }
+
+    .member-card:hover img {
+        /* transform: scale(1.1); */
+        border-color: #ffcc00;
+    }
+
+    .gallery_span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .gallery_span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #ffcc00, #ff9900);
+        border-radius: 5px;
+        animation: underline 2s infinite alternate;
+    }
+
+    @keyframes underline {
+        from {
+            transform: scaleX(0);
+        }
+
+        to {
+            transform: scaleX(1);
+        }
+    }
+</style>
+<!-- Top members section End -->
+
 <!-- Top members section start -->
 <section id="top-members" class="py-5" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: #fff;">
     <div class="container">

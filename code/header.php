@@ -180,13 +180,13 @@
 
           <body>
               <!-- Premium Loader -->
-              <!-- <div id="premiumLoader">
+              <div id="premiumLoader">
                   <div class="loader-content">
                       <img src="./images/0001.jpeg" alt="Team 0001 Logo" class="loader-logo">
                       <div class="loader-spinner"></div>
                       <h2 class="loader-text">Team 0001</h2>
                   </div>
-              </div> -->
+              </div>
 
               <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background: #0d1b2a;">
                   <div class="container">
@@ -198,7 +198,7 @@
                       </a>
 
                       <!-- Toggler for mobile -->
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                       </button>
@@ -208,7 +208,7 @@
                           <ul class="navbar-nav ms-auto text-start align-items-lg-center">
 
                               <!-- Home -->
-                              <li class="nav-item">
+                              <li class="nav-item mt-2">
                                   <a class="nav-link d-flex align-items-center <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-warning fw-bold' : 'text-light'; ?>" href="../index.php">
                                       <i class="fas fa-home me-2"></i> Home
                                   </a>
