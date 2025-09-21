@@ -6,7 +6,7 @@ if ($conn->connect_error) {
 }
 
 // 🔹 Fetch top members
-$sql = "SELECT * FROM members ORDER BY rand() LIMIT 6";
+$sql = "SELECT * FROM members ORDER BY rand() LIMIT 10";
 $result = $conn->query($sql);
 
 // Store in array for reuse

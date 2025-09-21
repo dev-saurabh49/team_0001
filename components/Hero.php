@@ -190,15 +190,15 @@
         <div
             class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
             <div class="col-lg-7 mb-4 mb-lg-0 mt-4 mt-lg-5">
-                <h1 class="display-5 fw-bold text-warning mb-3" data-aos="fade-right">
+                <h1 class="display-5 fw-bold text-warning mb-3 mb-5" data-aos="fade-right">
                     Welcome to <span class="text-light gallery_span">Team 0001</span>
                 </h1>
-                <p class="lead mb-4 px-2 px-lg-0 mt-3" data-aos="fade-up">
-                    <span class="fw-bold text-warning">
+                <p class="lead mb-4 px-2 px-lg-0 mt-5" data-aos="fade-up">
+                    <span class="fw-bold text-warning mb-5">
                         Strength >> Unity >> Brotherhood
                     </span>
                     <br />
-                    <span>
+                    <span class="mt-5" style="margin-top: 20px;">
                         Team 0001 is not just a group of friends—it’s a family bound by
                         trust, discipline, and unity. Every member stands together,
                         supporting each other through every challenge.

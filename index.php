@@ -1,15 +1,17 @@
+
+
 <?php include 'code/header.php'; ?>
+
+
 <?php include "components/Hero.php";?>
 <?php include "components/About.php";?>
 <?php include "./founders.php" ?>
 <?php include "./top_members.php"; ?>
-<?php include "components/Testimonials.php"; ?>
 <?php include "components/FunFacts.php"; ?>
 <?php include "components/Events.php"; ?>
 <?php include "components/Blog.php"; ?>
+<?php include "components/Testimonials.php"; ?>
 <?php include "components/Faq.php"; ?>
-
-
 <div
   class="modal fade"
   id="callbackModal"

@@ -37,7 +37,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="./reports.php" class="nav-link"><i class="bi bi-graph-up-arrow"></i> Reports</a></li>
             <li><a href="./meetings.php" class="nav-link"><i class="bi bi-calendar-event"></i> Meetings</a></li>
             <li><a href="./finance.php" class="nav-link"><i class="bi bi-currency-dollar"></i> Finance</a></li>
-            <li><a href="./complaint.php" class="nav-link"><i class="bi bi-exclamation-circle"></i> Complaint</a></li>
+            <li><a href="./upload_images.php" class="nav-link"><i class="bi bi-exclamation-circle"></i> Images</a></li>
             <li><a href="./admin_cmp.php" class="nav-link"><i class="bi bi-shield-check"></i> Admin Complaint</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pollsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

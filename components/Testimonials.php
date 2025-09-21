@@ -23,7 +23,7 @@
                 ?>
                     <div class="swiper-slide mb-4">
                         <div class="testimonial-card p-6 shadow-lg border-0 rounded-4 text-center bg-dark text-light">
-                            <img src="code/<?= htmlspecialchars($row['profile_photo']); ?>"
+                            <img src="../code/<?= htmlspecialchars($row['profile_photo']); ?>"
                                 class="rounded-circle mb-3 shadow-lg border-3 border-warning mx-auto"
                                 style="width:80px;height:80px;object-fit:cover;">
                             <p class="fst-italic mb-2 text-white">

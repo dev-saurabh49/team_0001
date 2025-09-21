@@ -15,11 +15,11 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
 
-                <div class="accordion" id="faqAccordion">
+                <div class="accordion shadow-none" id="faqAccordion">
                     <!-- FAQ 1 -->
-                    <div class="accordion-item mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up">
+                    <div class="accordion-item shadow-none mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up">
                         <h2 class="accordion-header" id="faqHeading1">
-                            <button class="accordion-button bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                            <button class="accordion-button shadow-none text-warning bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
                                 How can I join Team 0001?
                             </button>
                         </h2>
@@ -31,9 +31,9 @@
                     </div>
 
                     <!-- FAQ 2 -->
-                    <div class="accordion-item mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="accordion-item shadow-none mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="100">
                         <h2 class="accordion-header" id="faqHeading2">
-                            <button class="accordion-button bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            <button class="accordion-button shadow-none bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
                                 What kind of activities does the team organize?
                             </button>
                         </h2>
@@ -45,9 +45,9 @@
                     </div>
 
                     <!-- FAQ 3 -->
-                    <div class="accordion-item mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion-item  mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="200">
                         <h2 class="accordion-header" id="faqHeading3">
-                            <button class="accordion-button bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                            <button class="accordion-button shadow-none bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
                                 Are there any membership fees?
                             </button>
                         </h2>
@@ -59,9 +59,9 @@
                     </div>
 
                     <!-- FAQ 4 -->
-                    <div class="accordion-item mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="accordion-item  mb-3 bg-dark rounded-4 shadow-lg border-0" data-aos="fade-up" data-aos-delay="300">
                         <h2 class="accordion-header" id="faqHeading4">
-                            <button class="accordion-button bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                            <button class="accordion-button shadow-none bg-dark text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
                                 How can I stay updated on team activities?
                             </button>
                         </h2>
